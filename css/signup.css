@@ -1,0 +1,294 @@
+.main-field{
+    justify-content: center;
+    position: relative;
+}
+
+.button-secondary{
+    margin-left: 12px;
+    margin-right: 28px;
+}
+
+.right-components a:hover{
+    color: #DD9C3A;
+}
+
+@media (max-width: 902px){
+    .navigations{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    .right-components a{
+        display: flex !important;
+    }
+    
+    .right-components div{
+        display: flex !important;
+    }
+
+    .right-components p{
+        display: flex !important;
+    }
+
+    .navigations a{
+        display: none;
+    }
+
+    .navigations{
+        display: none;
+        min-width: 0px;
+        width: 0px;
+    }
+
+    .vi-en p{
+        display: none !important;
+    }
+
+    .button-secondary{
+        margin-right: 0px;
+    }
+
+    .logo svg{
+        display: none !important;
+    }
+
+    .logo p{
+        display: block !important;
+    }
+}
+
+.login-field{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 500px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    padding: 36px;
+    padding-bottom: 20px;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.submit-field{
+    text-align: center;
+}
+
+.submit-field a:hover{
+    text-decoration: underline;
+}
+
+.input-box{
+    padding: 18px 24px;
+    width: 100%;
+    height: 56px;
+    border-radius: 12px;
+    margin-top: 4px;
+    border: 1px solid rgba(102, 102, 102, 0.35);
+}
+
+.login-button{
+    vertical-align: middle;
+    border: none;
+    color: white;
+    width: 100%;
+    height: 56px;
+    margin: 0px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+}
+
+.white-button{
+    width: 100%;
+    height: 64px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-top: 18px;
+}
+
+.white-button:hover{
+    background-color: #6CD11C;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: unset;
+}
+
+@media (max-width: 1024px){
+    .qr-code-field{
+        display: none;
+    }
+} 
+
+@media (max-width: 576px){
+    .main-field{
+        justify-content: center;
+    }
+
+    .login-field{
+        top: 2%;
+        right: initial;    
+        width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .h5{
+        font-size: 20px;
+    }
+
+    .h6{
+        font-size: 16px;
+    }
+
+    .t-subtitle-1{
+        font-size: 12px;
+    }
+
+    .input-box{
+        font-size: 10px;
+        height: 48px;
+    }
+
+    img{
+        width: 16px;
+        height: 16px;
+    }
+
+    .login-button{
+        height: 40px;
+        padding: 0px;
+    }
+
+    .t-caption{
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .main-field{
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)), #FFFFFF;
+    }
+
+    .white-button{
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #808080;
+        height: 48px;
+    }
+
+    .white-button:hover{
+        opacity: 1;
+        background: #6CD11C;
+    }
+    
+    .other-signup{
+        margin-top: 0px !important;
+
+    }
+
+    .other-signup img{
+        width: 80px;
+        height: 1px;
+    }
+}
+
+.other-signup div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.other-signup p{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.other-signup img{
+    width: auto;
+    height: 1.5px !important;
+    flex: 1;
+    background-color: #808080;
+    opacity: 0.5;
+}
+
+.social-field{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.social-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    border-radius: 32px;
+    border: 1px solid #808080;
+    background-color: white;
+    gap: 4px;
+}
+
+.social-button p{
+    margin: 0px;
+    cursor: pointer;
+}
+
+.social-button.facebook path{
+    fill: white;
+}
+
+.social-button:hover{
+    background-color: #6CD11C; 
+}
+
+.social-button:hover p{
+    color: #FFFFFF;
+}
+
+.social-button:hover svg circle{
+    fill: white;
+}
+
+.social-button.facebook:hover svg path{
+    fill: #6CD11C;
+}
+
+.social-button.google:hover svg path{
+    fill: white;
+}
+
+.social-button.apple:hover svg path:nth-child(1){
+    fill: #FFFFFF;
+}
+
+.social-button.apple:hover svg path:nth-child(2){
+    fill: #6CD11C;
+}
+
+@media (max-width: 576px){
+    .social-button{
+        height: 48px;
+    }
+
+    .social-button svg{
+        width: 18px;
+        height: 18px;
+    }
+
+    .social-button p{
+        font-size: 12px;
+    }
+}

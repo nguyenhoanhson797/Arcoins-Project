@@ -1,0 +1,284 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: regular;
+    src: url(../font/static/OpenSans/OpenSans-Regular.ttf)
+  }
+
+@font-face {
+    font-family: medium;
+    src: url(../font/static/OpenSans/OpenSans-Medium.ttf)
+}
+
+@font-face {
+    font-family: semi-bold;
+    src: url(../font/static/OpenSans/OpenSans-SemiBold.ttf)
+}
+
+@font-face {
+    font-family: bold;
+    src: url(../font/static/OpenSans/OpenSans-Bold.ttf)
+}
+
+.screen{
+    position: relative;
+    height: max-content;
+    min-height: 100vh;
+}
+
+.dashboard-col-desktop{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 38px 8px;
+    gap: 40px;
+    min-height: 100vh;
+    width: 276px;   
+    background-color: white;
+    z-index: 2;
+    transition: all ease 0.3s;
+}
+
+.dashboard-col-mobile{
+    display: flex;
+    position: absolute;
+    top: 0px;
+    right: -414px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    padding-top: 40px;
+    gap: 28px;
+    min-height: 100%;
+    height: max-content;
+    width: 414px;
+    background-color: white;
+    z-index: 999;
+    transition: all ease 0.3s;
+}
+
+.dashboard-col-mobile .logo-full{
+    margin-top: 40px;
+    bottom: 10%;
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 1200px)  {
+    .dashboard-col-desktop{
+        display: none;
+    }
+}
+
+@media (max-width: 440px) {
+    .dashboard-col-mobile{
+        width: 100%;
+    }
+} 
+
+.tag-field{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.name-tag{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.personal-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.personal-img img{
+    width: 80px;
+    position: absolute;
+    top: -4px;
+}
+
+.icon{
+    width: 24px;
+    height: 24px;
+    fill: #0045AC;
+}
+
+/* .menu-tap.active .icon{
+    fill: white;
+} */
+
+.menu-tap.focus .icon{
+    fill: white;
+}
+
+.menu-tap:hover .icon{
+    fill: white;
+}
+
+.arrow{
+    width: 20px;
+    height: 20px;
+    fill: #404040;
+    transition: 0.3s ease-out;
+}
+
+.menu-tap.focus .arrow{
+    fill: white;    
+    transform: rotate(180deg);
+}
+
+.menu-tap.active .arrow{
+    /* fill: white;     */
+    transform: rotate(180deg);
+}
+ 
+.menu-tap:hover .arrow{
+    fill: white;
+}
+
+.dashboard-navigation{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* width: max-content;
+    height: max-content; */
+    justify-content: center;
+    align-items: ce nter;
+    width: max-content;
+    height: max-content;
+}
+
+.dashboard-col-mobile .dashboard-navigation{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    width: 100%;
+    height: max-content;
+}
+
+.menu-box{
+    width: 260px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dashboard-col-mobile .menu-box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-tap{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 8px 12px 20px;
+    gap: 8px;
+    border-radius: 8px;
+    background-color: white;
+    border: none;
+}
+
+.menu-tap.focus{
+    background-color: #336ABD;
+}
+
+.menu-tap:hover{
+    background-color: #336ABD;
+}
+
+.menu-tap .text{
+    text-align: start;
+    width: 168px;
+    font-family: semi-bold;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.0125em;
+    color: #404040; 
+}
+
+.dashboard-col-mobile .text{
+    flex: 1;
+}
+
+.menu-tap.focus .text{
+    color: white;
+}
+
+.menu-tap:hover .text{
+    color: white;
+}
+
+.lv2-box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+.lv2-tap{
+    display: flex;
+    align-items: center;
+    font-family: semi-bold;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.0125em;
+    color: #404040;
+    width: 100%;
+    height: 44px;
+    align-items: flex-start;
+    padding: 12px 8px 12px 76px;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.lv2-tap:hover{
+    background-color: #CCDAEE;
+}
+
+.lv2-tap.active{
+    background-color: #CCDAEE;
+}
+
+.lv2-tap.focus{
+    background-color: #CCDAEE;
+}
+
+a{
+    text-decoration: none;
+}
+
+.close-burger{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    transition: ease 0.2;
+    cursor: pointer;
+}
+
+.close-burger svg{
+    transform: scale(1.5);
+}
+
+.close-burger:hover svg path{
+    fill: #DD9C3A;
+}

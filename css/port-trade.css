@@ -1,0 +1,365 @@
+.row{
+    margin-top: 0px;
+}
+
+.product-field{
+    padding: 40px 24px;
+    margin: 20px 0px;
+    border-radius: 8px;
+    min-width: 360px;
+    height: max-content;
+}
+
+.trade-field{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 8px;
+    height: 392px;
+    padding: 20px 24px;
+    padding-bottom: 0px;
+    background-image: url("../img/phoi-canh-du-an-opal-riverside.png");
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-statistic{
+    display: flex;
+    flex-direction: column;
+    /* gap: 28px; */
+    border-radius: 8px;
+    height: 392px;
+    min-width: 360px;
+    width: 100%;
+    padding: 28px 24px;
+    background: linear-gradient(34.12deg, #002356 26.83%, #03347A 85.81%);
+}
+
+.monthly-chart{
+    height: 180px;
+    min-height: 180px;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.monthly-chart img{
+    height: 100%;
+    position: absolute;
+}
+
+.statistic-data.container-fluid{
+    padding: 0px;
+    overflow: auto;
+    overflow-x: hidden;
+    margin-top: 12px;
+}
+
+/* scrollbar --------------------------- */
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+    height: 6px;
+    margin-left: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: none; 
+    border: none;
+  }
+   
+  /* Handle */
+  .statistic-data::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    transition: 0.5 ease;
+  }
+  
+  /* Handle on hover */
+  .statistic-data:hover::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 1);
+    height: 4px;
+  }
+
+  .monthly-chart::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    transition: 0.5 ease;
+  }
+  
+  /* Handle on hover */
+  .monthly-chart:hover::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  ::-webkit-scrollbar-corner{
+    appearance: none;
+  }
+
+/* scrollbar --------------------------- */
+
+.s-d-contain{
+    display: flex;
+    gap: 20px;
+}
+
+.s-d-contain .left,.right{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.s-d-contain .right{
+    width: 112px;
+}
+
+.s-d-contain.button{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    gap: 12px;
+}
+
+.s-d-contain.button .button-secondary{
+    width: 180px;
+    height: 44px;
+}
+
+.s-d-contain.button .button-box{
+    width: 180px;
+    height: 44px;
+    border-color: white;
+    border-width: 1px;
+}
+
+.s-d-contain.button .button-box:hover{
+    border-color: #DD9C3A;
+}
+
+@media (max-width: 1400px)  {
+    .s-d-contain.button .button-secondary,.button-box{
+        width: 100% !important;
+    }
+/* 
+    .statistic-data .row{
+        padding-right: 4px !important;
+    } */
+}
+
+@media (max-width: 992px)  {
+    .s-d-contain.button .button-secondary,.button-box{
+        width: 180px !important;
+    }
+}
+
+@media (max-width: 768px)  {
+    .s-d-contain.button .button-secondary,.button-box{
+        width: 100% !important;
+    }
+
+    /* .statistic-data .row{
+        padding-right: 4px !important;
+    } */
+}   
+
+.product-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    border-radius: 8px;
+    background-color: #F5F5F5;
+    padding: 4px 12px;
+}
+
+.product-bar:hover{
+    background: linear-gradient(58.07deg, #EBB52C 40.11%, #F7C74D 90.81%);
+}
+
+.product-bar.active{
+    background: linear-gradient(58.07deg, #EBB52C 40.11%, #F7C74D 90.81%);
+}
+
+.bottom-space{
+    height: 28px;
+}
+
+.product-bar:hover .code,.small-chart{
+    color: white;
+    fill: white;
+}
+
+.product-bar.active .code,.small-chart{
+    color: white;
+    fill: white;
+}
+
+.product-bar:hover .name{
+    background: linear-gradient(64.16deg, #175EC9 -1.07%, #2D1F84 -1.05%, #450D9E 49.79%, #A900C5 121.59%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.product-bar.active .name{
+    background: linear-gradient(64.16deg, #175EC9 -1.07%, #2D1F84 -1.05%, #450D9E 49.79%, #A900C5 121.59%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.product-bar.up svg{
+    min-width: 64px;
+    width: 28%;
+    stroke: #6CD11C;
+}
+
+.product-bar.deActive svg{
+    min-width: 64px;
+    width: 28%;
+    stroke: gainsboro;
+}
+
+.product-bar.down svg{
+    min-width: 64px;
+    width: 28%;
+    stroke: #DA4444;
+}
+
+.product-bar.up.active svg{
+    stroke: white;
+}
+
+.product-bar.down.active svg{
+    stroke: white;
+}
+
+.product-bar.up:hover svg{
+    stroke: white;
+}
+
+.product-bar.down:hover svg{
+    stroke: white;
+}
+
+@media (max-width: 576px){
+    .product-bar svg{
+        display: none;
+    }
+}
+
+#lineChart{
+    width: 200%;
+    max-height: 180px;
+    height: 180px;
+    min-width: 180px;
+}
+
+.trade-box{
+    display: flex;
+    width: 400px;
+    height: 156px;
+    border-radius: 8px 8px 0px 0px;
+    position: relative;
+}
+
+.trade-box-background{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(193, 221, 255, 0.4);
+    filter: blur(2px);
+    backdrop-filter: blur(5px);
+    width: 400px;
+    height: 156px;
+    border-radius: 8px 8px 0px 0px;
+    z-index: 1;
+}
+
+.trade-box .contain{
+    display: flex;
+    position: absolute;
+    z-index: 5;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 20px;
+    width: 100%;
+}
+
+.trade-box .title-price{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.trade-box .data{
+    display: flex;
+    gap: 12px;
+}
+
+.input-box{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.input-box .left{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.right .button-secondary{
+    border-radius: 4px;
+    width: 80px;
+    height: 36px;
+}
+
+.dropdown{
+    position: absolute;
+    top: 24px;
+    right: 32px;
+}
+
+.dropdown-toggle{
+    background-color: white;
+    border: none;
+}
+
+.dropdown-toggle:hover{
+    background-color: #6CD11C;
+    color: white;
+}
+
+.btn.show:focus{
+    background-color: #6CD11C;
+    color: white;
+}
+
+.btn.show{
+    background-color: #6CD11C;
+    color: white;
+}
+
+.dropdown-menu{
+    --bs-dropdown-min-width: 8rem;
+}
+
+
+.dropdown-item{
+    width: 100%;
+    border: none;
+}
+
+.dropdown-item:focus, .dropdown-item:hover{
+    background-color: rgba(255, 255, 255, 0) !important;
+    color: #DD9C3A;
+}
+
+
+
+
+

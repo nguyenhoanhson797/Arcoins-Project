@@ -1,0 +1,230 @@
+.main-field{
+    position: relative;
+}
+
+.button-secondary{
+    margin-left: 12px;
+    margin-right: 28px;
+}
+
+.right-components a:hover{
+    color: #DD9C3A;
+}
+
+@media (max-width: 902px){
+    .navigations{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    .right-components a{
+        display: flex !important;
+    }
+    
+    .right-components div{
+        display: flex !important;
+    }
+
+    .right-components p{
+        display: flex !important;
+    }
+
+    .navigations a{
+        display: none;
+    }
+
+    .navigations{
+        display: none;
+        min-width: 0px;
+        width: 0px;
+    }
+
+    .vi-en p{
+        display: none !important;
+    }
+
+    .button-secondary{
+        margin-right: 0px;
+    }
+
+    .logo svg{
+        display: none !important;
+    }
+
+    .logo p{
+        display: block !important;
+    }
+}
+
+.qr-code-field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 26%;
+    left: 10%;
+}
+
+.qr-code-field img{
+    width: 160px;
+    height: 160px;
+}
+
+.login-field{
+    position: absolute;
+    right: 16%;
+    top: 10%;
+    width: 440px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 36px;
+    padding-bottom: 20px;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.input-box{
+    padding: 18px 24px;
+    width: 100%;
+    height: 56px;
+    border-radius: 12px;
+    margin-top: 4px;
+    border: 1px solid rgba(102, 102, 102, 0.35);
+}
+
+.login-button{
+    vertical-align: middle;
+    border: none;
+    color: white;
+    width: 100%;
+    height: 56px;
+    margin: 0px;
+    border-radius: 20px;
+}
+
+.white-button{
+    width: 100%;
+    height: 64px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-top: 18px;
+}
+
+.white-button:hover{
+    background-color: #6CD11C;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: unset;
+}
+
+@media (max-width: 1024px){
+    .qr-code-field{
+        display: none;
+    }
+} 
+
+@media (max-width: 576px){
+    .main-field{
+        justify-content: center;
+    }
+
+    .login-field{
+        top: 6%;
+        right: initial;    
+        width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .h5{
+        font-size: 20px;
+    }
+
+    .h6{
+        font-size: 16px;
+    }
+
+    .t-subtitle-1{
+        font-size: 12px;
+    }
+
+    .input-box{
+        font-size: 10px;
+        height: 48px;
+    }
+
+    img{
+        width: 16px;
+        height: 16px;
+    }
+
+    .login-button{
+        height: 40px;
+        padding: 0px;
+    }
+
+    .t-caption{
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .main-field{
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)), #FFFFFF;
+    }
+
+    .white-button{
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #808080;
+        height: 48px;
+    }
+
+    .white-button:hover{
+        opacity: 1;
+        background: #6CD11C;
+    }
+    
+    .create-account{
+        margin-top: 0px !important;
+    }
+
+    .create-account img{
+        width: 80px;
+        height: 1px;
+    }
+}
+
+.create-account div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.create-account p{
+    margin-left: 20px;
+    margin-right: 20px;
+    min-width: max-content; 
+}
+
+.create-account img{
+    width: auto;
+    height: 1.5px !important;
+    flex: 1;
+    background-color: #808080;
+    opacity: 0.5;
+}
+
+

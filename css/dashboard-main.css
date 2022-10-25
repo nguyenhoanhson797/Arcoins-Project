@@ -1,0 +1,502 @@
+.hot-projects-field{
+    display: flex;
+    gap: 8px;
+}
+
+.project-show{
+    gap: 12px;
+    width: 64%;
+    height: 256px;
+    flex-direction: column;
+}
+
+.show-box{
+    display: flex;
+    flex: 1;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    align-items: flex-end;
+}
+
+.show-box .title{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.show-box .text-field{
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    height: max-content;
+    z-index: 2;
+}
+
+.show-box .background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: 0.3s ease;
+    background-image: url("../img/fullsize-opal-riverside.png");
+    background-size: cover;
+}
+
+.show-box .background-shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    bottom: -48px;
+    background: linear-gradient(179.83deg, rgba(3, 3, 3, 0) 29.65%, #262626 80.42%);
+}
+
+.show-box .text-field .data{
+    display: flex;
+    justify-content: space-between;
+}
+
+.show-box:hover .background{
+    transform: scale(1.2);
+}
+
+.project-list{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 220px;
+    align-self: flex-end;
+    display: flex;
+    gap: 8px;
+    overflow: auto;
+    padding: 0px 20px;
+}
+
+/* TODO scrollbar --------------------------- */
+
+    /* * width */
+    ::-webkit-scrollbar {
+        width: 4px;
+        margin-left: 12px;
+        height: 6px;
+    }
+    
+    /* * Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: none; 
+        border: none;
+    }
+    
+    /* * Handle */
+    .project-list::-webkit-scrollbar-thumb {
+        background: rgba(221, 156, 58, 0.5);
+        border-radius: 10px;
+        transition: 0.5 ease;
+    }
+    
+    /* * .Handle on hover */
+    .project-list:hover::-webkit-scrollbar-thumb {
+        background: rgba(221, 156, 58, 1);
+    }
+
+    ::-webkit-scrollbar-corner{
+        appearance: none;
+    }
+
+/* TODO scrollbar --------------------------- */
+
+@media (max-width: 576px){
+    .hot-projects-field{
+        flex-direction: column;
+    }
+
+    .project-show{
+        width: 100%;
+    }
+
+    .project-list{
+        /* align-self: unset;
+        justify-content: flex-start; */
+        align-items: center;
+        flex-direction: row;
+        padding: 12px 12px;
+        width: 100%;
+        height: max-content;
+        overflow-x: scroll;
+        overflow-y: auto;
+    }
+
+    .project-frame{
+        width: 252px !important;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px){
+    .hot-projects-field{
+        flex-direction: column;
+    }
+
+    .project-show{
+        width: 100%;
+    }
+
+    .project-list{
+        align-items: center;
+        flex-direction: row;
+        padding: 12px 12px;
+        width: 100%;
+        height: max-content;
+        overflow-x: scroll;
+        overflow-y: auto;
+    }
+
+    
+    .project-frame{
+        width: 252px !important;
+    }
+}
+
+.project-frame{
+    display: flex;
+    width: 100%;
+    height: 76px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px 12px;
+    gap: 16px;
+    align-items: center;
+}
+
+.project-frame:hover{
+    background-color: #F1D7B0;
+}
+
+.project-list .information{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: max-content;
+}
+
+.project-frame .img-box{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.my-card-field{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 24px 12px 24px;
+    border-radius: 12px;
+    height: 100%;
+    gap: 20px;
+    background: linear-gradient(73.42deg, #EBB52C 7.82%, #FFDA7B 88.94%);
+}
+
+.my-card-field .card{
+    background: linear-gradient(68.24deg, #7942FB -3.47%, #B091F9 103.83%);
+    border-radius: 12px;
+    /* flex: 1; */
+    border: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 12px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.my-card-field .card:hover{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(68.24deg, #7942FB -3.47%, #B091F9 103.83%);
+}   
+
+.ellipse1{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 45%;
+    top: -52px;
+}
+
+.ellipse2{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: -72px;
+    top: 30%;
+}
+
+.ellipse3{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: -50px;
+    bottom: -48px;
+}
+
+.card .balance{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card .profit{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card .profit .grow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 24px;
+    border-radius: 60px;
+    background: rgba(255, 255, 255, 0.23);
+    backdrop-filter: blur(71.05px);
+}
+
+@media (max-width: 768px) {
+    .my-card-field .card{
+        gap: 60px;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px){
+    .my-card-field .card{
+        padding: 20px 28px;
+    }
+}
+
+.chart-stats{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.chart-field{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.monthly-statistic{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    height: 452px;
+    border-radius: 20px;
+    padding: 18px 24px;
+    background: linear-gradient(31.28deg, #0067C6 0%, #0169C9 48.81%, #0F82ED 83.75%, #329DFF 98.65%);
+}
+
+@media (max-width: 992px){
+
+}
+
+.stats-chart canvas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+.stats-chart{
+    width: 160px;
+    height: 160px;
+}
+
+.pieChart-note{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pieChart-note .data{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.note-bar{
+    width: 20px;
+    height: 4px;
+    border-radius: 4px;
+}
+
+.note1{
+    background-color: rgb(167, 227, 119);
+}
+
+.note2{
+    background-color: rgb(233, 143, 143);
+}
+
+.note3{
+    background-color: rgb(255, 255, 255);
+}
+
+.stats-data{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 5%;
+}
+
+@media (max-width: 992px){
+    .chart-stats{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .stats-data{
+        margin-left: 0px;
+    }
+
+    .monthly-statistic{
+        height: max-content;
+    }
+}
+
+@media (max-width: 576px){
+    .chart-stats{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stats-data{
+        margin-left: 5%;
+    }
+    
+    .monthly-statistic{
+        min-width: 340px;
+    }
+}
+
+.project-line{
+    display: flex;
+    width: 100%;
+    height: 24px;
+    overflow: auto;
+    position: relative;
+}
+
+.project-line img{
+    position: absolute;
+    width: max-content;
+    left: 0px;
+    top: 0px;
+    animation-name: projectLine;
+    animation-delay: 2s;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes projectLine {
+    from{left: 0px;}
+    to{left: calc(-1503px + 100%);}
+}
+
+.portfolio-demo{
+    background-color: white;
+    height: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 12px; */
+    padding: 24px;
+    padding-bottom: 8px;
+    overflow: auto;
+    position: relative;
+}
+
+.project-list-field{
+    width: 100%;
+    height: 90px;
+    position: relative;
+    overflow-x: scroll;
+}
+
+.project-list-horizontal{
+    display: flex;
+    align-items: center;
+    width: max-content;
+    height: max-content;
+    gap: 8px;
+    position: absolute;
+}
+
+.project-list-horizontal .project-frame.active{
+    background-color: #B2DB9F;
+}
+
+.project-list-horizontal .project-frame{
+    width: max-content;
+}
+
+.project-list-horizontal .project-frame:hover{
+    background-color: #B2DB9F;
+}
+
+.project-list-horizontal .information{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: max-content;
+}
+
+.portfolio-demo .data-field{
+    width: 100%;
+    display: flex;
+    gap: 28px;
+    margin-top: 12px;
+    overflow: auto;
+}
+
+.data-field .data-block{
+    display: flex;
+    gap: 8px;
+    width: max-content;
+}
+
+.data-field .data-block p{
+    width: max-content;
+}
+
+.data-block .left,.right{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.monthly-chart{
+    height: 180px;
+    min-height: 180px;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 16px;
+    border-radius: 8px;
+}
+
+.monthly-chart img{
+    height: 100%;
+    position: absolute;
+}
+

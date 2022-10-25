@@ -1,0 +1,281 @@
+.row{
+    margin-top: 0px;
+}
+
+.product-field{
+    padding: 40px 24px;
+    margin: 20px 0px;
+    border-radius: 8px;
+    min-width: 340px;
+    height: max-content;
+}
+
+.project-status{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    border-radius: 8px;
+    height: 392px;
+    min-width: 340px;
+    padding: 20px 24px;
+}
+
+.pieChart-field{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: 10%;
+}
+
+
+.pieChart{
+    width: 160px;
+    height: 160px;
+}
+
+.pieChart-note{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pieChart-note .data{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.note-bar{
+    width: 20px;
+    height: 4px;
+    border-radius: 4px;
+}
+
+.data-field{
+    display: flex;
+    gap: 16px;
+    margin-left: 15%;
+}
+
+.data-field .right,.left{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-statistic{
+    display: flex;
+    flex-direction: column;
+    /* gap: 28px; */
+    border-radius: 8px;
+    height: 392px;
+    min-width: 340px;
+    padding: 28px 24px;
+    background: linear-gradient(34.12deg, #002356 26.83%, #03347A 85.81%);
+}
+
+.monthly-chart{
+    width: 100%;
+    height: 180px;
+    min-height: 180px;
+    overflow: auto;
+}
+
+.monthly-chart canvas{
+    width: max-content;
+}
+
+.statistic-data.container-fluid{
+    padding: 0px;
+    overflow: auto;
+    overflow-x: hidden
+}
+
+/* scrollbar --------------------------- */
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+    margin-left: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: none; 
+    border: none;
+  }
+   
+  /* Handle */
+  .statistic-data::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    transition: 0.5 ease;
+  }
+  
+  /* Handle on hover */
+  .statistic-data:hover::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  ::-webkit-scrollbar-corner{
+    appearance: none;
+  }
+
+/* scrollbar --------------------------- */
+
+.s-d-contain{
+    display: flex;
+    gap: 20px;
+}
+
+.s-d-contain .left,.right{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.s-d-contain .right{
+    width: 112px;
+}
+
+.s-d-contain.button{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    gap: 12px;
+}
+
+.s-d-contain.button .button-secondary{
+    width: 180px;
+    height: 44px;
+}
+
+.s-d-contain.button .button-box{
+    width: 180px;
+    height: 44px;
+    border-color: white;
+    border-width: 1px;
+}
+
+.s-d-contain.button .button-box:hover{
+    border-color: #DD9C3A;
+}
+
+@media (max-width: 1400px)  {
+    .s-d-contain.button .button-secondary,.button-box{
+        width: 100% !important;
+    }
+
+    .statistic-data .row{
+        padding-right: 4px !important;
+    }
+}
+
+@media (max-width: 992px)  {
+    .s-d-contain.button .button-secondary,.button-box{
+        width: 180px !important;
+    }
+}
+
+@media (max-width: 768px)  {
+    .s-d-contain.button .button-secondary,.button-box{
+        width: 100% !important;
+    }
+
+    .statistic-data .row{
+        padding-right: 4px !important;
+    }
+}   
+
+.product-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    border-radius: 8px;
+    background-color: #F5F5F5;
+    padding: 4px 12px;
+}
+
+.product-bar:hover{
+    background: linear-gradient(58.07deg, #EBB52C 40.11%, #F7C74D 90.81%);
+}
+
+.product-bar.active{
+    background: linear-gradient(58.07deg, #EBB52C 40.11%, #F7C74D 90.81%);
+}
+
+.bottom-space{
+    height: 28px;
+}
+
+.product-bar:hover .code,.small-chart{
+    color: white;
+    fill: white;
+}
+
+.product-bar.active .code,.small-chart{
+    color: white;
+    fill: white;
+}
+
+.product-bar:hover .name{
+    background: linear-gradient(64.16deg, #175EC9 -1.07%, #2D1F84 -1.05%, #450D9E 49.79%, #A900C5 121.59%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.product-bar.active .name{
+    background: linear-gradient(64.16deg, #175EC9 -1.07%, #2D1F84 -1.05%, #450D9E 49.79%, #A900C5 121.59%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.product-bar.up svg{
+    min-width: 64px;
+    width: 28%;
+    stroke: #6CD11C;
+}
+
+.product-bar.deActive svg{
+    min-width: 64px;
+    width: 28%;
+    stroke: gainsboro;
+}
+
+.product-bar.down svg{
+    min-width: 64px;
+    width: 28%;
+    stroke: #DA4444;
+}
+
+.product-bar.up.active svg{
+    stroke: white;
+}
+
+.product-bar.down.active svg{
+    stroke: white;
+}
+
+.product-bar.up:hover svg{
+    stroke: white;
+}
+
+.product-bar.down:hover svg{
+    stroke: white;
+}
+
+@media (max-width: 576px){
+    .product-bar svg{
+        display: none;
+    }
+}
+
+#lineChart{
+    width: 200%;
+    max-height: 180px;
+    height: 180px;
+    min-width: 180px;
+}

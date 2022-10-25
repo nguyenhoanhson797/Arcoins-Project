@@ -1,0 +1,132 @@
+
+.items-box{
+    height: max-content;
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.items-box tbody tr{
+    height: 72px;
+}
+
+.items-box td{
+    vertical-align: middle;
+    text-align: center;
+    column-width: 100px;
+}
+
+.items-box thead tr{
+    vertical-align: middle;
+    text-align: center;
+    padding: 20px 0px;
+    gap: 20px;
+    height: 80px;
+}
+
+th{
+    color: #468812;
+}
+
+.payment-summary{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: max-content;
+    padding: 20px;
+    border: 2px solid #DD9C3A;
+    border-radius: 8px;
+    gap: 20px;
+}
+
+.items-field{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.field{
+    display: flex;
+    justify-content: space-between;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-field{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.promo-code{
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.promo-code input{
+    border-radius: 4px;
+    padding: 0px 12px;
+    border-width: 0.5px;
+    border-color: #404040;
+    width: 100%;
+}
+
+.button-secondary{
+    width: 100px;
+    border-radius: 4px;
+}
+
+.button-primary{
+    background-color: #0045AC;
+    border-radius: 12px;
+    width: 100%;
+    height: 48px;
+}
+
+.delete-icon{
+    fill: #CCDAEE;
+    cursor: pointer;
+}
+
+.delete-icon.active{
+    fill: #336ABD;
+}
+
+.form-check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form-check-input{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 1.5px solid rgba(0,0,0,.5);
+}
+
+.form-check-input:checked {
+    background-color: #6CD11C;
+    border-color: #6CD11C;
+}
+
+.form-check-input:focus {
+    border-color: #6CD11C;
+    outline: 0;
+    box-shadow: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: initial;
+  margin: initial;
+}
+
+.delete-icon:hover path{
+    fill: #336ABD;
+}
