@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Login </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu-dashboard.css">
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body onmousedown="clickOut()">
+
+    <section class="screen">
+        <!-- Navigation bar -->
+        <div class="navi-bar container-fluid b-primary-90">
+            <div class="logo">
+                <svg width="52" height="26" viewBox="0 0 40 20">
+                    <path d="M40 20H32.3607L20 7.63926L7.63926 20H0L20 0L40 20Z" fill="#0045AC"/>
+                    <path d="M24.7223 20H15.2793L20.0008 15.2786L24.7223 20Z" fill="#DD9C3A"/>
+                </svg>
+                <p class="f-regular h5 c-grayscale-0"> Arcoins </p>
+            </div>
+    
+            <div class="navigations">
+                <a href="#" class="c-grayscale-0 f-medium t-subtitle-1"> Home Page </a>
+                <a href="#" class="c-grayscale-0 f-medium t-subtitle-1"> About Us </a>
+                <a href="#" class="c-grayscale-0 f-medium t-subtitle-1"> Market </a>
+                <a href="#" class="c-grayscale-0 f-medium t-subtitle-1"> FAQ </a>
+                <a href="#" class="c-grayscale-0 f-medium t-subtitle-1"> Contact </a>
+            </div>
+    
+            <div class="right-components">
+    
+                <a href="login.html" class="f-semi-bold t-subtitle-1 c-grayscale-0"> Sign in</a>
+                <a href="signup.html" class="button-secondary">
+                    <p class="f-semi-bold t-subtitle-1 c-grayscale-0"> Get Start </p>
+                </a>
+    
+                <div class="vi-en">
+                    <p class="f-semi-bold t-subtitle-1 c-grayscale-0"> <span class="f-semi-bold t-subtitle-1 c-secondary">Vi</span>/En</p>
+                </div>
+    
+            </div>
+        </div>
+
+    <div class="main-field b-e-16px">
+        <div class="login-field">
+            <form class="login-form" action="dashboard-main.html">
+                <p class="f-semi-bold h5 c-grayscale-80 d-flex justify-content-center">Sign in</p>
+                <div class="input-field">
+
+                    <p class="t-subtitle-1 c-grayscale-60">Your Account Name</p>
+                    <input id="name-box" class="input-box c-grayscale-40" type="text" placeholder="Enter your account name">
+
+                    <p class="t-subtitle-1 c-grayscale-60 mt-3">Your Email</p>
+                    <input id="email-box" class="input-box c-grayscale-40" type="email" placeholder="Enter your email address">
+
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <p class="t-subtitle-1 c-grayscale-60">Create a password</p>
+                        <div class="first-off" onclick="showHide(this)">
+                            <img src="img/icon/eye-off.svg">
+                        </div>
+                        <div class="first-open hide" onclick="showHide(this)">
+                            <img src="img/icon/eye-open.svg">
+                        </div>                
+                    </div>
+                    <input id="password-box" class="input-box" type="password" placeholder="Password">
+
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <p class="t-subtitle-1 c-grayscale-60">Confirm password</p>
+                        <div class="re-off" onclick="showHide(this)">
+                            <img src="img/icon/eye-off.svg">
+                        </div>
+                        <div class="re-open hide" onclick="showHide(this)">
+                            <img src="img/icon/eye-open.svg">
+                        </div>                
+                    </div>
+                    <input id="re-password-box" class="input-box" type="password" placeholder="Password">
+                </div>
+
+                <div class="submit-field">
+                    <p class="t-caption c-grayscale-80 mb-3">By continuing, you agree to the Terms of use and Privacy Policy. </p>
+                    <input type="submit" class="login-button button-secondary f-medium h5" value="Create an account">
+                    <a href="login.html" class="t-body-1 f-medium c-grayscale-60">Already have an account?</a>
+                </div>
+            </form>
+
+            <div class="other-signup mt-5">
+                <div class="d-flex align-items-center justify-content-between">
+                    <img src="img/icon/Divider.svg">
+                    <p class="h6 c-grayscale-60">OR</p>
+                    <img src="img/icon/Divider.svg">
+                </div>
+
+                <div class="social-field mt-3 mb-4">
+                    <div class="social-button facebook">
+                        <svg width="32" height="32" viewBox="0 0 32 32">
+                            <circle cx="16" cy="16" r="14" fill="#0C82EE"/>
+                            <path d="M21.2137 20.2816L21.8356 16.3301H17.9452V13.767C17.9452 12.6857 18.4877 11.6311 20.2302 11.6311H22V8.26699C22 8.26699 20.3945 8 18.8603 8C15.6548 8 13.5617 9.89294 13.5617 13.3184V16.3301H10V20.2816H13.5617V29.8345C14.2767 29.944 15.0082 30 15.7534 30C16.4986 30 17.2302 29.944 17.9452 29.8345V20.2816H21.2137Z" fill="rgba(255, 255, 255, 0)"/>
+                        </svg>
+                        <p class="f-medium h6"> Facebook </p>
+                    </div>
+
+                    <div class="social-button google">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.5005 12.2331C22.5005 11.3698 22.4291 10.7398 22.2744 10.0864H12.2148V13.983H18.1196C18.0006 14.9514 17.3577 16.4097 15.9291 17.3897L15.9091 17.5202L19.0897 19.9349L19.3101 19.9564C21.3338 18.1247 22.5005 15.4297 22.5005 12.2331Z" fill="#4285F4"/>
+                            <path d="M12.214 22.5001C15.1068 22.5001 17.5353 21.5667 19.3092 19.9567L15.9282 17.39C15.0235 18.0083 13.8092 18.44 12.214 18.44C9.38069 18.44 6.97596 16.6083 6.11874 14.0767L5.99309 14.0871L2.68583 16.5955L2.64258 16.7133C4.40446 20.1433 8.0235 22.5001 12.214 22.5001Z" fill="#34A853"/>
+                            <path d="M6.12095 14.0767C5.89476 13.4234 5.76386 12.7233 5.76386 12C5.76386 11.2767 5.89476 10.5767 6.10905 9.92337L6.10306 9.78423L2.75435 7.2356L2.64478 7.28667C1.91862 8.71002 1.50195 10.3084 1.50195 12C1.50195 13.6917 1.91862 15.29 2.64478 16.7133L6.12095 14.0767Z" fill="#FBBC05"/>
+                            <path d="M12.2141 5.55997C14.2259 5.55997 15.583 6.41163 16.3569 7.12335L19.3807 4.23C17.5236 2.53834 15.1069 1.5 12.2141 1.5C8.02353 1.5 4.40447 3.85665 2.64258 7.28662L6.10686 9.92332C6.97598 7.39166 9.38073 5.55997 12.2141 5.55997Z" fill="#EB4335"/>
+                        </svg>
+                        <p class="f-medium h6"> Google </p>
+                    </div>
+
+                    <div class="social-button apple">
+                        <svg width="32" height="32" viewBox="0 0 32 32">
+                            <path d="M30 16C30 23.728 23.735 30 16 30C8.265 30 2 23.728 2 16C2 8.265 8.265 2 16 2C23.735 2 30 8.265 30 16Z" fill="#333333"/>
+                            <path d="M22.5621 12.4574C22.4857 12.502 20.6671 13.4425 20.6671 15.5279C20.7528 17.9061 22.9621 18.7401 23 18.7401C22.9621 18.7847 22.6665 19.8763 21.7907 21.0205C21.0956 22.0062 20.3242 23 19.1528 23C18.0385 23 17.6385 22.3431 16.3528 22.3431C14.972 22.3431 14.5813 23 13.5242 23C12.3528 23 11.5242 21.953 10.7913 20.9766C9.8391 19.6986 9.02978 17.6931 9.00121 15.7675C8.98195 14.7471 9.19189 13.744 9.72481 12.8921C10.477 11.7026 11.8198 10.8952 13.2863 10.8686C14.4099 10.8333 15.4099 11.5875 16.0956 11.5875C16.7528 11.5875 17.9814 10.8686 19.3714 10.8686C19.9714 10.8692 21.5714 11.0376 22.5621 12.4574ZM16.0006 10.6649C15.8006 9.73303 16.3528 8.80119 16.8671 8.20677C17.5242 7.48792 18.5621 7 19.4571 7C19.5143 7.93185 19.1522 8.84575 18.505 9.51136C17.9242 10.2302 16.9242 10.7714 16.0006 10.6649Z" fill="white"/>
+                        </svg>                        
+                        <p class="f-medium h6"> Apple </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- TODO Main js -->
+<script>
+    function showHide(obj){
+        if(obj.className.includes("first-off")){
+            obj.className += " hide";
+            document.querySelector(".first-open").className = document.querySelector(".first-open").className.replace(" hide","");
+            document.querySelector("#password-box").type = "text";
+        }
+
+        if(obj.className.includes("first-open")){
+            obj.className += " hide";
+            document.querySelector(".first-off").className = document.querySelector(".first-off").className.replace(" hide","");
+            document.querySelector("#password-box").type = "password";
+        }
+
+        if(obj.className.includes("re-off")){
+            obj.className += " hide";
+            document.querySelector(".re-open").className = document.querySelector(".re-open").className.replace(" hide","");
+            document.querySelector("#re-password-box").type = "text";
+        }
+
+        if(obj.className.includes("re-open")){
+            obj.className += " hide";
+            document.querySelector(".re-off").className = document.querySelector(".re-off").className.replace(" hide","");
+            document.querySelector("#re-password-box").type = "password";
+        }
+    }
+</script>
+<!-- TODOMain js -->
+
+
+<!-- Search box -->
+<div class="search-box hide">
+    <input type="text" class="search-bar" placeholder="Search here" onclick="clickSearchBar()">
+    <div class="search-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24">
+                <path d="M17 22V20H20V17H22V20.5C22 20.89 21.84 21.24 21.54 21.54C21.24 21.84 20.89 22 20.5 22H17ZM7 22H3.5C3.11 22 2.76 21.84 2.46 21.54C2.16 21.24 2 20.89 2 20.5V17H4V20H7V22ZM17 2H20.5C20.89 2 21.24 2.16 21.54 2.46C21.84 2.76 22 3.11 22 3.5V7H20V4H17V2ZM7 2V4H4V7H2V3.5C2 3.11 2.16 2.76 2.46 2.46C2.76 2.16 3.11 2 3.5 2H7ZM10.5 6C13 6 15 8 15 10.5C15 11.38 14.75 12.2 14.31 12.9L17.57 16.16L16.16 17.57L12.9 14.31C12.2 14.75 11.38 15 10.5 15C8 15 6 13 6 10.5C6 8 8 6 10.5 6ZM10.5 8C9.83696 8 9.20107 8.26339 8.73223 8.73223C8.26339 9.20107 8 9.83696 8 10.5C8 11.163 8.26339 11.7989 8.73223 12.2678C9.20107 12.7366 9.83696 13 10.5 13C11.163 13 11.7989 12.7366 12.2678 12.2678C12.7366 11.7989 13 11.163 13 10.5C13 9.83696 12.7366 9.20107 12.2678 8.73223C11.7989 8.26339 11.163 8 10.5 8Z" fill="white"/>
+        </svg>
+    </div>
+</div>
+
+<script>
+    var clickTime = 0;
+
+    function clickOut(){
+        if (clickTime >= 1){
+            document.querySelector(".search-bar").className = "search-bar";
+            clickTime = 0;
+            console.log(clickTime);
+        }
+    }
+
+    function clickSearchBar(){
+        document.querySelector(".search-bar").className += " active";
+        clickTime ++;
+        console.log(clickTime)
+    }
+</script>
+<!-- Search box -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

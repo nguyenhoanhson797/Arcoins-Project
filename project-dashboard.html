@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Project Dashboard </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu-dashboard.css">
+    <link rel="stylesheet" href="css/project-dashboard.css">
+</head>
+
+<body onmousedown="clickOut()">
+    <div class="blur-layer hide"></div>
+    <div class="alert-field hide">
+        <div class="alert-box shadow-04px">
+            <div class="d-flex flex-column align-items-center">
+                <img src="img/icon/alert-success.svg">
+                <p class="f-semi-bold h5 c-success mt-4"> Add successful! </p>
+                <p class="f-medium t-subtitle-1 c-grayscale-80">Please check your cart</p>
+            </div>
+            <div class="button-primary mx-auto" onclick="closeAlert()">
+                <p class="f-semi-bold t-subtitle-1 c-grayscale-0"> Continue </p>
+            </div>
+        </div>
+    </div>
+
+    <section class="screen">
+    <!-- Navigation bar -->
+    <div class="navi-bar container-fluid b-primary-90">
+        <div class="logo">
+            <svg width="52" height="26" viewBox="0 0 40 20">
+                <path d="M40 20H32.3607L20 7.63926L7.63926 20H0L20 0L40 20Z" fill="#0045AC"/>
+                <path d="M24.7223 20H15.2793L20.0008 15.2786L24.7223 20Z" fill="#DD9C3A"/>
+            </svg>
+            <p class="f-regular h5 c-grayscale-0"> Arcoins </p>
+        </div>
+
+        <!-- <div class="navigations">
+            <a href="#" class="c-grayscale-0 f-medium t-subtitle-1"> Home Page </a>
+            <a href="#" class="c-grayscale-0 f-medium t-subtitle-1"> About Us </a>
+            <a href="#" class="c-grayscale-0 f-medium t-subtitle-1"> Market </a>
+            <a href="#" class="c-grayscale-0 f-medium t-subtitle-1"> FAQ </a>
+            <a href="#" class="c-grayscale-0 f-medium t-subtitle-1"> Contact </a>
+        </div> -->
+
+        <div class="right-components">
+            <div class="search-box">
+                <input type="text" class="search-bar" placeholder="Search here" onclick="clickSearchBar()">
+                <div class="search-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24">
+                            <path d="M17 22V20H20V17H22V20.5C22 20.89 21.84 21.24 21.54 21.54C21.24 21.84 20.89 22 20.5 22H17ZM7 22H3.5C3.11 22 2.76 21.84 2.46 21.54C2.16 21.24 2 20.89 2 20.5V17H4V20H7V22ZM17 2H20.5C20.89 2 21.24 2.16 21.54 2.46C21.84 2.76 22 3.11 22 3.5V7H20V4H17V2ZM7 2V4H4V7H2V3.5C2 3.11 2.16 2.76 2.46 2.46C2.76 2.16 3.11 2 3.5 2H7ZM10.5 6C13 6 15 8 15 10.5C15 11.38 14.75 12.2 14.31 12.9L17.57 16.16L16.16 17.57L12.9 14.31C12.2 14.75 11.38 15 10.5 15C8 15 6 13 6 10.5C6 8 8 6 10.5 6ZM10.5 8C9.83696 8 9.20107 8.26339 8.73223 8.73223C8.26339 9.20107 8 9.83696 8 10.5C8 11.163 8.26339 11.7989 8.73223 12.2678C9.20107 12.7366 9.83696 13 10.5 13C11.163 13 11.7989 12.7366 12.2678 12.2678C12.7366 11.7989 13 11.163 13 10.5C13 9.83696 12.7366 9.20107 12.2678 8.73223C11.7989 8.26339 11.163 8 10.5 8Z" fill="white"/>
+                    </svg>
+                </div>
+            </div>
+
+            <a href="payment-cart.html" class="add-to-cart">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                    <path d="M11 9H13V6H16V4H13V1H11V4H8V6H11V9ZM7 18C6.46957 18 5.96086 18.2107 5.58579 18.5858C5.21071 18.9609 5 19.4696 5 20C5 20.5304 5.21071 21.0391 5.58579 21.4142C5.96086 21.7893 6.46957 22 7 22C7.53043 22 8.03914 21.7893 8.41421 21.4142C8.78929 21.0391 9 20.5304 9 20C9 19.4696 8.78929 18.9609 8.41421 18.5858C8.03914 18.2107 7.53043 18 7 18ZM17 18C16.4696 18 15.9609 18.2107 15.5858 18.5858C15.2107 18.9609 15 19.4696 15 20C15 20.5304 15.2107 21.0391 15.5858 21.4142C15.9609 21.7893 16.4696 22 17 22C17.5304 22 18.0391 21.7893 18.4142 21.4142C18.7893 21.0391 19 20.5304 19 20C19 19.4696 18.7893 18.9609 18.4142 18.5858C18.0391 18.2107 17.5304 18 17 18ZM7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L21.16 4.96L19.42 4H19.41L18.31 6L15.55 11H8.53L8.4 10.73L6.16 6L5.21 4L4.27 2H1V4H3L6.6 11.59L5.25 14.04C5.09 14.32 5 14.65 5 15C5 15.5304 5.21071 16.0391 5.58579 16.4142C5.96086 16.7893 6.46957 17 7 17H19V15H7.42C7.29 15 7.17 14.89 7.17 14.75Z" fill="white"/>
+                </svg>
+            </a>
+
+            <a href="#" class="account">
+                <svg width="32" height="32" viewBox="0 0 32 32">
+                    <rect width="32" height="32" rx="16" fill="white"/>
+                    <path d="M16 8C17.0609 8 18.0783 8.42143 18.8284 9.17157C19.5786 9.92172 20 10.9391 20 12C20 13.0609 19.5786 14.0783 18.8284 14.8284C18.0783 15.5786 17.0609 16 16 16C14.9391 16 13.9217 15.5786 13.1716 14.8284C12.4214 14.0783 12 13.0609 12 12C12 10.9391 12.4214 9.92172 13.1716 9.17157C13.9217 8.42143 14.9391 8 16 8V8ZM16 18C20.42 18 24 19.79 24 22V24H8V22C8 19.79 11.58 18 16 18Z" fill="#808080"/>
+                </svg>
+            </a>
+
+            <div class="vi-en">
+                <p class="f-semi-bold t-subtitle-1 c-grayscale-0"> <span class="f-semi-bold t-subtitle-1 c-secondary">Vi</span>/En</p>
+            </div>
+
+            <div class="bobile-burger" onclick="openMobileMenu()" onmouseover="hoverinMobileMenu()" onmouseleave="hoveroutMobileMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M3 6H21V8H3V6ZM3 11H21V13H3V11ZM3 16H21V18H3V16Z" fill="white"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- TODO mobile menu -->
+    <section class="dashboard-col-mobile shadow-06px">
+
+        <div class="tag-field">
+            <div class="name-tag">
+                <div class="personal-img">
+                    <img src="img/per-pic.png">
+                </div>
+                <div class="d-flex flex-column">
+                    <p class="f-semi-bold t-body-1 c-grayscale-80"> Son Hoanh </p>
+                    <p class="t-caption c-grayscale-80"> Welcome back! </p>
+                </div>
+            </div>
+
+            <div class="close-burger" onclick="closeMobileMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M3 6H21V8H3V6ZM3 11H21V13H3V11ZM3 16H21V18H3V16Z" fill="grey"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="dashboard-navigation" id="dashboard">
+            <!-- Navigation: tab Dashboard -->
+            <div class="menu-box">
+                <a href="dashboard-main.html" class="menu-tap" onclick="clickLv1(this)">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M10 2V4.26L12 5.59V4H22V19H17V21H24V2H10ZM7.5 5L0 10V21H15V10L7.5 5ZM14 6V6.93L15.61 8H16V6H14ZM18 6V8H20V6H18ZM7.5 7.5L13 11V19H10V13H5V19H2V11L7.5 7.5ZM18 10V12H20V10H18ZM18 14V16H20V14H18Z"/>
+                    </svg>
+
+                    <div class="text">Dashboard</div>
+                </a>
+            </div>
+
+            <!-- Navigation: tab Projects -->
+            <div class="menu-box">
+                <a href="project-dashboard.html" class="menu-tap focus" onclick="clickLv1(this)">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M3 14L3.5 14.07L8.07 9.5C7.97831 9.1642 7.97818 8.80998 8.06962 8.47411C8.16106 8.13824 8.34074 7.83298 8.59 7.59C9.37 6.8 10.63 6.8 11.41 7.59C11.94 8.11 12.11 8.85 11.93 9.5L14.5 12.07L15 12C15.18 12 15.35 12 15.5 12.07L19.07 8.5C19 8.35 19 8.18 19 8C19 7.46957 19.2107 6.96086 19.5858 6.58579C19.9609 6.21071 20.4696 6 21 6C21.5304 6 22.0391 6.21071 22.4142 6.58579C22.7893 6.96086 23 7.46957 23 8C23 8.53043 22.7893 9.03914 22.4142 9.41421C22.0391 9.78929 21.5304 10 21 10C20.82 10 20.65 10 20.5 9.93L16.93 13.5C17 13.65 17 13.82 17 14C17 14.5304 16.7893 15.0391 16.4142 15.4142C16.0391 15.7893 15.5304 16 15 16C14.4696 16 13.9609 15.7893 13.5858 15.4142C13.2107 15.0391 13 14.5304 13 14L13.07 13.5L10.5 10.93C10.18 11 9.82 11 9.5 10.93L4.93 15.5L5 16C5 16.5304 4.78929 17.0391 4.41421 17.4142C4.03914 17.7893 3.53043 18 3 18C2.46957 18 1.96086 17.7893 1.58579 17.4142C1.21071 17.0391 1 16.5304 1 16C1 15.4696 1.21071 14.9609 1.58579 14.5858C1.96086 14.2107 2.46957 14 3 14Z"/>
+                    </svg>
+
+                    <div class="text">Projects</div>
+                </a>
+            </div>
+
+            <!-- Navigation: tab Portfolios -->
+            <div class="menu-box">
+                <button class="menu-tap" type="button" data-bs-toggle="collapse" data-bs-target="#portfolios" aria-controls="portfolios" onclick="clickLv1(this)">
+
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M22 5V7H19V10H17V7H14V5H17V2H19V5H22ZM19 19H5V5H11V3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13H19V19ZM15 13V17H17V13H15ZM11 17H13V9H11V17ZM9 17V11H7V17H9Z"/>
+                    </svg>
+
+                    <div class="text">Portfolios</div>
+
+                    <svg viewBox="0 0 24 24" class="arrow">
+                        <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z"/>
+                    </svg>
+
+                </button>
+
+                <div class="lv2-box collapse" data-parent="#accordion" id="portfolios">
+                    <a class="lv2-tap" href="port-myprojects.html"> My Projects </a>
+                    <a class="lv2-tap" href="port-trade.html"> Trade </a>
+                </div>
+            </div>
+
+            <!-- Navigation: Payment -->
+            <div class="menu-box">
+                <button class="menu-tap" type="button" data-bs-toggle="collapse" data-bs-target="#payment" aria-controls="payment" onclick="clickLv1(this)">
+
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M20 8H4V6H20V8ZM20 18H4V12H20V18ZM20 4H4C2.89 4 2 4.89 2 6V18C2 18.5304 2.21071 19.0391 2.58579 19.4142C2.96086 19.7893 3.46957 20 4 20H20C20.5304 20 21.0391 19.7893 21.4142 19.4142C21.7893 19.0391 22 18.5304 22 18V6C22 5.46957 21.7893 4.96086 21.4142 4.58579C21.0391 4.21071 20.5304 4 20 4ZM7 22H9V24H7V22ZM11 22H13V24H11V22ZM15 22H17V24H15V22Z"/>
+                    </svg>
+
+                    <div class="text">Payment</div>
+
+                    <svg viewBox="0 0 24 24" class="arrow">
+                        <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z"/>
+                    </svg>
+
+                </button>
+
+                <div class="lv2-box collapse" data-parent="#accordion" id="payment">
+                    <a class="lv2-tap" href="payment-wallet.html"> Wallet </a>
+                    <a class="lv2-tap" href="payment-cart.html"> Cart </a>
+                    <a class="lv2-tap" href="payment-methods.html"> Methods </a>
+                </div>
+            </div>
+
+            <!-- Navigation: Account -->
+            <div class="menu-box">
+                <button class="menu-tap" onclick="clickLv1(this)">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 4C13.0609 4 14.0783 4.42143 14.8284 5.17157C15.5786 5.92172 16 6.93913 16 8C16 9.06087 15.5786 10.0783 14.8284 10.8284C14.0783 11.5786 13.0609 12 12 12C10.9391 12 9.92172 11.5786 9.17157 10.8284C8.42143 10.0783 8 9.06087 8 8C8 6.93913 8.42143 5.92172 9.17157 5.17157C9.92172 4.42143 10.9391 4 12 4ZM12 14C16.42 14 20 15.79 20 18V20H4V18C4 15.79 7.58 14 12 14Z"/>
+                    </svg>
+
+                    <div class="text">Account</div>
+                </button>
+            </div>
+
+            <!-- Navigation: Setting -->
+            <div class="menu-box">
+                <button class="menu-tap" data-bs-parent="#dashboard" type="button" data-bs-toggle="collapse" data-bs-target="#setting" aria-controls="setting" aria-expanded="true" onclick="clickLv1(this)">
+
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M3 17V19H9V17H3ZM3 5V7H13V5H3ZM13 21V19H21V17H13V15H11V21H13ZM7 9V11H3V13H7V15H9V9H7ZM21 13V11H11V13H21ZM15 9H17V7H21V5H17V3H15V9Z"/>
+                    </svg>
+
+                    <div class="text">Setting</div>
+
+                    <svg viewBox="0 0 24 24" class="arrow">
+                        <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z"/>
+                    </svg>
+                </button>
+
+                <div class="lv2-box collapse" id="setting">
+                    <div class="lv2-tap"> Platform UI </div>
+                    <div class="lv2-tap"> Notifications </div>
+                    <div class="lv2-tap"> Privacy </div>                
+                </div>
+            </div>
+
+            <!-- Navigation: Sign out -->
+            <div class="menu-box">
+                <a href="login.html" class="menu-tap" onclick="clickLv1(this)">
+
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M21.0469 12.7969L17.1094 16.7344C17.0046 16.8388 16.8803 16.9215 16.7436 16.9778C16.6069 17.0341 16.4604 17.0629 16.3125 17.0625C16.0143 17.0612 15.7283 16.9435 15.5156 16.7344C15.4107 16.6299 15.3275 16.5057 15.2707 16.3689C15.214 16.2322 15.1847 16.0856 15.1847 15.9375C15.1847 15.7894 15.214 15.6428 15.2707 15.5061C15.3275 15.3693 15.4107 15.2451 15.5156 15.1406L17.5312 13.125H9.75C9.45163 13.125 9.16548 13.0065 8.9545 12.7955C8.74353 12.5845 8.625 12.2984 8.625 12C8.625 11.7016 8.74353 11.4155 8.9545 11.2045C9.16548 10.9935 9.45163 10.875 9.75 10.875H17.5312L15.5156 8.85938C15.3043 8.64803 15.1855 8.36139 15.1855 8.0625C15.1855 7.76361 15.3043 7.47697 15.5156 7.26562C15.727 7.05428 16.0136 6.93555 16.3125 6.93555C16.6114 6.93555 16.898 7.05428 17.1094 7.26562L21.0469 11.2031C21.1518 11.3076 21.235 11.4318 21.2918 11.5686C21.3485 11.7053 21.3778 11.8519 21.3778 12C21.3778 12.1481 21.3485 12.2947 21.2918 12.4314C21.235 12.5682 21.1518 12.6924 21.0469 12.7969ZM9.75 19.125H4.875V4.875H9.75C10.0484 4.875 10.3345 4.75647 10.5455 4.5455C10.7565 4.33452 10.875 4.04837 10.875 3.75C10.875 3.45163 10.7565 3.16548 10.5455 2.9545C10.3345 2.74353 10.0484 2.625 9.75 2.625H4.5C4.00348 2.62746 3.528 2.8258 3.1769 3.1769C2.8258 3.528 2.62746 4.00348 2.625 4.5V19.5C2.62746 19.9965 2.8258 20.472 3.1769 20.8231C3.528 21.1742 4.00348 21.3725 4.5 21.375H9.75C10.0484 21.375 10.3345 21.2565 10.5455 21.0455C10.7565 20.8345 10.875 20.5484 10.875 20.25C10.875 19.9516 10.7565 19.6655 10.5455 19.4545C10.3345 19.2435 10.0484 19.125 9.75 19.125Z"/>
+                    </svg>
+                    <div class="text">Sign out</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="logo-full d-flex">
+            <img src="img/logo-full.svg">
+        </div>
+    </section>
+    <!-- TODO mobile menu -->
+    <!-- Navigation bar -->
+    
+        <div class="main-field b-e-16px">
+    
+            <!-- Menu dashboard -->
+            <section class="dashboard-col-desktop shadow-06px">
+                <div class="name-tag">
+                    <div class="personal-img">
+                        <img src="img/per-pic.png">
+                    </div>
+                    <div class="d-flex flex-column">
+                        <p class="f-semi-bold t-body-1 c-grayscale-80"> Son Hoanh </p>
+                        <p class="t-caption c-grayscale-80"> Welcome back! </p>
+                    </div>
+                </div>
+    
+                <div class="dashboard-navigation" id="dashboard">
+                    <!-- Navigation: tab Dashboard -->
+                    <div class="menu-box">
+                        <a href="dashboard-main.html" class="menu-tap" onclick="clickLv1(this)">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M10 2V4.26L12 5.59V4H22V19H17V21H24V2H10ZM7.5 5L0 10V21H15V10L7.5 5ZM14 6V6.93L15.61 8H16V6H14ZM18 6V8H20V6H18ZM7.5 7.5L13 11V19H10V13H5V19H2V11L7.5 7.5ZM18 10V12H20V10H18ZM18 14V16H20V14H18Z"/>
+                            </svg>
+    
+                            <div class="text">Dashboard</div>
+                        </a>
+                    </div>
+    
+                    <!-- Navigation: tab Projects -->
+                    <div class="menu-box">
+                        <a href="project-dashboard.html" class="menu-tap focus" onclick="clickLv1(this)">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M3 14L3.5 14.07L8.07 9.5C7.97831 9.1642 7.97818 8.80998 8.06962 8.47411C8.16106 8.13824 8.34074 7.83298 8.59 7.59C9.37 6.8 10.63 6.8 11.41 7.59C11.94 8.11 12.11 8.85 11.93 9.5L14.5 12.07L15 12C15.18 12 15.35 12 15.5 12.07L19.07 8.5C19 8.35 19 8.18 19 8C19 7.46957 19.2107 6.96086 19.5858 6.58579C19.9609 6.21071 20.4696 6 21 6C21.5304 6 22.0391 6.21071 22.4142 6.58579C22.7893 6.96086 23 7.46957 23 8C23 8.53043 22.7893 9.03914 22.4142 9.41421C22.0391 9.78929 21.5304 10 21 10C20.82 10 20.65 10 20.5 9.93L16.93 13.5C17 13.65 17 13.82 17 14C17 14.5304 16.7893 15.0391 16.4142 15.4142C16.0391 15.7893 15.5304 16 15 16C14.4696 16 13.9609 15.7893 13.5858 15.4142C13.2107 15.0391 13 14.5304 13 14L13.07 13.5L10.5 10.93C10.18 11 9.82 11 9.5 10.93L4.93 15.5L5 16C5 16.5304 4.78929 17.0391 4.41421 17.4142C4.03914 17.7893 3.53043 18 3 18C2.46957 18 1.96086 17.7893 1.58579 17.4142C1.21071 17.0391 1 16.5304 1 16C1 15.4696 1.21071 14.9609 1.58579 14.5858C1.96086 14.2107 2.46957 14 3 14Z"/>
+                            </svg>
+    
+                            <div class="text">Projects</div>
+                        </a>
+    
+                    </div>
+    
+                    <!-- Navigation: tab Portfolios -->
+                    <div class="menu-box">
+                        <button class="menu-tap" type="button" data-bs-toggle="collapse" data-bs-target="#portfolios" aria-controls="portfolios" onclick="clickLv1(this)">
+    
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M22 5V7H19V10H17V7H14V5H17V2H19V5H22ZM19 19H5V5H11V3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13H19V19ZM15 13V17H17V13H15ZM11 17H13V9H11V17ZM9 17V11H7V17H9Z"/>
+                            </svg>
+    
+                            <div class="text">Portfolios</div>
+    
+                            <svg viewBox="0 0 24 24" class="arrow">
+                                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z"/>
+                            </svg>
+    
+                        </button>
+    
+                        <div class="lv2-box collapse" data-parent="#accordion" id="portfolios">
+                            <a class="lv2-tap" href="port-myprojects.html"> My Projects </a>
+                            <a class="lv2-tap" href="port-trade.html"> Trade </a>
+                        </div>
+                    </div>
+    
+                    <!-- Navigation: Payment -->
+                    <div class="menu-box">
+                        <button class="menu-tap" type="button" data-bs-toggle="collapse" data-bs-target="#payment" aria-controls="payment" onclick="clickLv1(this)">
+    
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M20 8H4V6H20V8ZM20 18H4V12H20V18ZM20 4H4C2.89 4 2 4.89 2 6V18C2 18.5304 2.21071 19.0391 2.58579 19.4142C2.96086 19.7893 3.46957 20 4 20H20C20.5304 20 21.0391 19.7893 21.4142 19.4142C21.7893 19.0391 22 18.5304 22 18V6C22 5.46957 21.7893 4.96086 21.4142 4.58579C21.0391 4.21071 20.5304 4 20 4ZM7 22H9V24H7V22ZM11 22H13V24H11V22ZM15 22H17V24H15V22Z"/>
+                            </svg>
+    
+                            <div class="text">Payment</div>
+    
+                            <svg viewBox="0 0 24 24" class="arrow">
+                                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z"/>
+                            </svg>
+    
+                        </button>
+    
+                        <div class="lv2-box collapse" id="payment">
+                            <a class="lv2-tap" href="payment-wallet.html"> Wallet </a>
+                            <a class="lv2-tap" href="payment-cart.html"> Cart </a>
+                            <a class="lv2-tap" href="payment-methods.html"> Methods </a>
+                        </div>
+                    </div>
+    
+                    <!-- Navigation: Account -->
+                    <div class="menu-box">
+                        <button class="menu-tap" onclick="clickLv1(this)">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M12 4C13.0609 4 14.0783 4.42143 14.8284 5.17157C15.5786 5.92172 16 6.93913 16 8C16 9.06087 15.5786 10.0783 14.8284 10.8284C14.0783 11.5786 13.0609 12 12 12C10.9391 12 9.92172 11.5786 9.17157 10.8284C8.42143 10.0783 8 9.06087 8 8C8 6.93913 8.42143 5.92172 9.17157 5.17157C9.92172 4.42143 10.9391 4 12 4ZM12 14C16.42 14 20 15.79 20 18V20H4V18C4 15.79 7.58 14 12 14Z"/>
+                            </svg>
+    
+                            <div class="text">Account</div>
+                        </button>
+                    </div>
+    
+                    <!-- Navigation: Setting -->
+                    <div class="menu-box">
+                        <button class="menu-tap" data-bs-parent="#dashboard" type="button" data-bs-toggle="collapse" data-bs-target="#setting" aria-controls="setting" aria-expanded="true" onclick="clickLv1(this)">
+    
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M3 17V19H9V17H3ZM3 5V7H13V5H3ZM13 21V19H21V17H13V15H11V21H13ZM7 9V11H3V13H7V15H9V9H7ZM21 13V11H11V13H21ZM15 9H17V7H21V5H17V3H15V9Z"/>
+                            </svg>
+    
+                            <div class="text">Setting</div>
+    
+                            <svg viewBox="0 0 24 24" class="arrow">
+                                <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z"/>
+                            </svg>
+    
+                        </button>
+    
+                        <div class="lv2-box collapse" id="setting">
+                            <div class="lv2-tap"> Platform UI </div>
+                            <div class="lv2-tap"> Notifications </div>
+                            <div class="lv2-tap"> Privacy </div>                
+                        </div>
+                    </div>
+    
+                    <!-- Navigation: Sign out -->
+                    <div class="menu-box">
+                        <a href="login.html" class="menu-tap" onclick="clickLv1(this)">
+    
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M21.0469 12.7969L17.1094 16.7344C17.0046 16.8388 16.8803 16.9215 16.7436 16.9778C16.6069 17.0341 16.4604 17.0629 16.3125 17.0625C16.0143 17.0612 15.7283 16.9435 15.5156 16.7344C15.4107 16.6299 15.3275 16.5057 15.2707 16.3689C15.214 16.2322 15.1847 16.0856 15.1847 15.9375C15.1847 15.7894 15.214 15.6428 15.2707 15.5061C15.3275 15.3693 15.4107 15.2451 15.5156 15.1406L17.5312 13.125H9.75C9.45163 13.125 9.16548 13.0065 8.9545 12.7955C8.74353 12.5845 8.625 12.2984 8.625 12C8.625 11.7016 8.74353 11.4155 8.9545 11.2045C9.16548 10.9935 9.45163 10.875 9.75 10.875H17.5312L15.5156 8.85938C15.3043 8.64803 15.1855 8.36139 15.1855 8.0625C15.1855 7.76361 15.3043 7.47697 15.5156 7.26562C15.727 7.05428 16.0136 6.93555 16.3125 6.93555C16.6114 6.93555 16.898 7.05428 17.1094 7.26562L21.0469 11.2031C21.1518 11.3076 21.235 11.4318 21.2918 11.5686C21.3485 11.7053 21.3778 11.8519 21.3778 12C21.3778 12.1481 21.3485 12.2947 21.2918 12.4314C21.235 12.5682 21.1518 12.6924 21.0469 12.7969ZM9.75 19.125H4.875V4.875H9.75C10.0484 4.875 10.3345 4.75647 10.5455 4.5455C10.7565 4.33452 10.875 4.04837 10.875 3.75C10.875 3.45163 10.7565 3.16548 10.5455 2.9545C10.3345 2.74353 10.0484 2.625 9.75 2.625H4.5C4.00348 2.62746 3.528 2.8258 3.1769 3.1769C2.8258 3.528 2.62746 4.00348 2.625 4.5V19.5C2.62746 19.9965 2.8258 20.472 3.1769 20.8231C3.528 21.1742 4.00348 21.3725 4.5 21.375H9.75C10.0484 21.375 10.3345 21.2565 10.5455 21.0455C10.7565 20.8345 10.875 20.5484 10.875 20.25C10.875 19.9516 10.7565 19.6655 10.5455 19.4545C10.3345 19.2435 10.0484 19.125 9.75 19.125Z"/>
+                            </svg>
+                            <div class="text">Sign out</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Menu dashboard -->
+    
+            <section class="main-contain container-fluid">
+                <div class="title-bar f-semi-bold h4 c-primary-50"> Projects </div>
+                <div class="container-fluid">
+
+                <!-- Main contain -->
+                    <section class="project-field">
+                        <div class="button-row">
+                            <!-- Ongoing button -->
+                            <div class="ongoing-button shadow-06px active" onclick="clickOngoing()">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M13.0008 2.03003V4.05003C17.3908 4.59003 20.5008 8.58003 19.9608 12.97C19.5008 16.61 16.6408 19.5 13.0008 19.93V21.93C18.5008 21.38 22.5008 16.5 21.9508 11C21.5008 6.25003 17.7308 2.50003 13.0008 2.03003ZM11.0008 2.06003C9.05078 2.25003 7.19078 3.00003 5.67078 4.26003L7.10078 5.74003C8.22078 4.84003 9.57078 4.26003 11.0008 4.06003V2.06003ZM4.26078 5.67003C3.01044 7.18737 2.24098 9.04311 2.05078 11H4.05078C4.24078 9.58003 4.80078 8.23003 5.69078 7.10003L4.26078 5.67003ZM2.06078 13C2.26078 14.96 3.03078 16.81 4.27078 18.33L5.69078 16.9C4.80771 15.7696 4.24474 14.4226 4.06078 13H2.06078ZM7.10078 18.37L5.67078 19.74C7.18556 21.0027 9.04005 21.7891 11.0008 22V20C9.57818 19.8161 8.23119 19.2531 7.10078 18.37ZM12.5008 7.00003V12.25L17.0008 14.92L16.2508 16.15L11.0008 13V7.00003H12.5008Z"/>
+                                </svg>            
+                                <p class="f-semi-bold t-subtitle-1">Ongoing</p>
+                            </div>
+                            <!-- Ongoing button -->
+
+                            <!-- Upcoming button -->
+                            <div class="upcoming-button" onclick="clickUpcoming()">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M3 14L3.5 14.07L8.07 9.5C7.97831 9.1642 7.97818 8.80998 8.06962 8.47411C8.16106 8.13824 8.34074 7.83298 8.59 7.59C9.37 6.8 10.63 6.8 11.41 7.59C11.94 8.11 12.11 8.85 11.93 9.5L14.5 12.07L15 12C15.18 12 15.35 12 15.5 12.07L19.07 8.5C19 8.35 19 8.18 19 8C19 7.46957 19.2107 6.96086 19.5858 6.58579C19.9609 6.21071 20.4696 6 21 6C21.5304 6 22.0391 6.21071 22.4142 6.58579C22.7893 6.96086 23 7.46957 23 8C23 8.53043 22.7893 9.03914 22.4142 9.41421C22.0391 9.78929 21.5304 10 21 10C20.82 10 20.65 10 20.5 9.93L16.93 13.5C17 13.65 17 13.82 17 14C17 14.5304 16.7893 15.0391 16.4142 15.4142C16.0391 15.7893 15.5304 16 15 16C14.4696 16 13.9609 15.7893 13.5858 15.4142C13.2107 15.0391 13 14.5304 13 14L13.07 13.5L10.5 10.93C10.18 11 9.82 11 9.5 10.93L4.93 15.5L5 16C5 16.5304 4.78929 17.0391 4.41421 17.4142C4.03914 17.7893 3.53043 18 3 18C2.46957 18 1.96086 17.7893 1.58579 17.4142C1.21071 17.0391 1 16.5304 1 16C1 15.4696 1.21071 14.9609 1.58579 14.5858C1.96086 14.2107 2.46957 14 3 14Z"/>
+                                </svg>
+                                <p class="f-semi-bold t-subtitle-1">Upcoming</p>
+                            </div>
+                            <!-- Upcoming button -->
+                        </div>
+
+                        <!-- Ongoing table -->
+                        <div class="projects-box ongoing shadow-06px bg-white" id="ongoing">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="f-semi-bold t-button">Projects</th>
+                                        <th scope="col" class="f-semi-bold t-button">Location</th>
+                                        <th scope="col" class="f-semi-bold t-button">Price</th>
+                                        <th scope="col" class="f-semi-bold t-button">Total Invested</th>
+                                        <th scope="col" class="f-semi-bold t-button">Available</th>
+                                        <th scope="col" class="f-semi-bold t-button">Month Change</th>
+                                        <th scope="col" class="f-semi-bold t-button"></th>
+                                        <th scope="col" class="f-semi-bold t-button"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>    
+                                        <td class="f-semi-bold t-button">ORC</td>
+                                        <td class="f-semi-bold t-button">HCM</td>
+                                        <td class="f-semi-bold t-button">12,34 $</td>
+                                        <td class="f-semi-bold t-button">43.625 Coins</td>
+                                        <td class="f-semi-bold t-button">3.565 Coins</td>
+                                        <td class="f-semi-bold t-button">
+                                            <svg width="104" height="22" viewBox="0 0 104 22" fill="none">
+                                                <path d="M0.714355 13.7439L12.0794 21L23.4445 3.61314L34.8096 16.5166L46.1747 18.2155L57.5398 16.091L68.9048 1L80.2699 8.46099L91.635 13.2246L103 12.9129" stroke="#6CD11C"/>
+                                            </svg>
+                                        </td>
+                                        <td class="f-semi-bold t-button" colspan="2">
+                                            <div class="button-feild d-flex">
+                                                <div class="button-box">
+                                                    <p class="f-semi-bold t-caption c-primary-40"> More Info </p>
+                                                </div>         
+                                                <div class="button-secondary" id="project-0" onclick="addToCart(this)">
+                                                    <p class="f-semi-bold t-caption c-grayscale-0"> Add to cart </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>    
+                                        <td class="f-semi-bold t-button">ECH</td>
+                                        <td class="f-semi-bold t-button">HN</td>
+                                        <td class="f-semi-bold t-button">10,51 $</td>
+                                        <td class="f-semi-bold t-button">52.174 Coins</td>
+                                        <td class="f-semi-bold t-button">11.536 Coins</td>
+                                        <td class="f-semi-bold t-button">
+                                            <svg width="104" height="22" viewBox="0 0 104 22" fill="none">
+                                                <path d="M0.714355 10.9464L15.3266 1L29.9388 1.30978L44.5511 10.1369L59.1633 12.0274L73.7756 5.96553L88.3878 21L103 10.9465" stroke="#DA4444"/>
+                                            </svg>
+                                        </td>
+                                        <td class="f-semi-bold t-button" colspan="2">
+                                            <div class="button-feild d-flex">
+                                                <div class="button-box">
+                                                    <p class="f-semi-bold t-caption c-primary-40"> More Info </p>
+                                                </div>         
+                                                <div class="button-secondary" id="project-1" onclick="addToCart(this)">
+                                                    <p class="f-semi-bold t-caption c-grayscale-0"> Add to cart </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>    
+                                        <td class="f-semi-bold t-button">LSN</td>
+                                        <td class="f-semi-bold t-button">NTR</td>
+                                        <td class="f-semi-bold t-button">11,63 $</td>
+                                        <td class="f-semi-bold t-button">52.174 Coins</td>
+                                        <td class="f-semi-bold t-button">11.536 Coins</td>
+                                        <td class="f-semi-bold t-button">
+                                            <svg width="104" height="22" viewBox="0 0 104 22" fill="none">
+                                                <path d="M0.714355 14.5437L15.3266 17.8226L29.9388 1L44.5511 9.53295L59.1633 18.1415L73.7756 21L88.3878 14.8777L103 12.1352" stroke="#6CD11C"/>
+                                            </svg>
+                                        </td>
+                                        <td class="f-semi-bold t-button" colspan="2">
+                                            <div class="button-feild d-flex">
+                                                <div class="button-box">
+                                                    <p class="f-semi-bold t-caption c-primary-40"> More Info </p>
+                                                </div>         
+                                                <div class="button-secondary" id="project-2" onclick="addToCart(this)">
+                                                    <p class="f-semi-bold t-caption c-grayscale-0"> Add to cart </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>    
+                                        <td class="f-semi-bold t-button">LSN</td>
+                                        <td class="f-semi-bold t-button">NTR</td>
+                                        <td class="f-semi-bold t-button">11,63 $</td>
+                                        <td class="f-semi-bold t-button">52.174 Coins</td>
+                                        <td class="f-semi-bold t-button">11.536 Coins</td>
+                                        <td class="f-semi-bold t-button">
+                                            <svg width="104" height="22" viewBox="0 0 104 22" fill="none">
+                                                <path d="M0.714355 14.5437L15.3266 17.8226L29.9388 1L44.5511 9.53295L59.1633 18.1415L73.7756 21L88.3878 14.8777L103 12.1352" stroke="#6CD11C"/>
+                                            </svg>
+                                        </td>
+                                        <td class="f-semi-bold t-button" colspan="2">
+                                            <div class="button-feild d-flex">
+                                                <div class="button-box">
+                                                    <p class="f-semi-bold t-caption c-primary-40"> More Info </p>
+                                                </div>         
+                                                <div class="button-secondary" id="project-2" onclick="addToCart(this)">
+                                                    <p class="f-semi-bold t-caption c-grayscale-0"> Add to cart </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>    
+                                        <td class="f-semi-bold t-button">LSN</td>
+                                        <td class="f-semi-bold t-button">NTR</td>
+                                        <td class="f-semi-bold t-button">11,63 $</td>
+                                        <td class="f-semi-bold t-button">52.174 Coins</td>
+                                        <td class="f-semi-bold t-button">11.536 Coins</td>
+                                        <td class="f-semi-bold t-button">
+                                            <svg width="104" height="22" viewBox="0 0 104 22" fill="none">
+                                                <path d="M0.714355 14.5437L15.3266 17.8226L29.9388 1L44.5511 9.53295L59.1633 18.1415L73.7756 21L88.3878 14.8777L103 12.1352" stroke="#6CD11C"/>
+                                            </svg>
+                                        </td>
+                                        <td class="f-semi-bold t-button" colspan="2">
+                                            <div class="button-feild d-flex">
+                                                <div class="button-box">
+                                                    <p class="f-semi-bold t-caption c-primary-40"> More Info </p>
+                                                </div>         
+                                                <div class="button-secondary" id="project-2" onclick="addToCart(this)">
+                                                    <p class="f-semi-bold t-caption c-grayscale-0"> Add to cart </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Ongoing table -->
+
+                        <!-- Upcoming table -->
+                        <div class="projects-box upcoming shadow-06px bg-white hide" id="upcoming">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="f-semi-bold t-button">Projects</th>
+                                        <th scope="col" class="f-semi-bold t-button">Location</th>
+                                        <th scope="col" class="f-semi-bold t-button">Price</th>
+                                        <th scope="col" class="f-semi-bold t-button">Total Invested</th>
+                                        <th scope="col" class="f-semi-bold t-button">Available</th>
+                                        <th scope="col" class="f-semi-bold t-button">Month Change</th>
+                                        <th scope="col" class="f-semi-bold t-button"></th>
+                                        <th scope="col" class="f-semi-bold t-button"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>    
+                                        <td class="f-semi-bold t-button">ORC</td>
+                                        <td class="f-semi-bold t-button">HCM</td>
+                                        <td class="f-semi-bold t-button">12,34 $</td>
+                                        <td class="f-semi-bold t-button">43.625 Coins</td>
+                                        <td class="f-semi-bold t-button">3.565 Coins</td>
+                                        <td class="f-semi-bold t-button">--------</td>
+                                        <td class="f-semi-bold t-button" colspan="2">
+                                            <div class="button-feild d-flex">
+                                                <div class="button-box">
+                                                    <p class="f-semi-bold t-caption c-primary-40"> More Info </p>
+                                                </div>         
+                                                <div class="button-secondary">
+                                                    <p class="f-semi-bold t-caption c-grayscale-0"> Add to cart </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>    
+                                        <td class="f-semi-bold t-button">ORC</td>
+                                        <td class="f-semi-bold t-button">HCM</td>
+                                        <td class="f-semi-bold t-button">12,34 $</td>
+                                        <td class="f-semi-bold t-button">43.625 Coins</td>
+                                        <td class="f-semi-bold t-button">3.565 Coins</td>
+                                        <td class="f-semi-bold t-button">--------</td>
+                                        <td class="f-semi-bold t-button" colspan="2">
+                                            <div class="button-feild d-flex">
+                                                <div class="button-box">
+                                                    <p class="f-semi-bold t-caption c-primary-40"> More Info </p>
+                                                </div>         
+                                                <div class="button-secondary">
+                                                    <p class="f-semi-bold t-caption c-grayscale-0"> Add to cart </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Upcoming table -->
+
+                    </section>
+                <!-- Main contain -->
+
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+
+<!------------------------------------------------------------------------>
+
+<!-- Project dashboard js -->
+    <script>
+        function clickOngoing(){
+            if (!document.querySelector(".ongoing-button").className.includes(" active")){
+                document.querySelector(".ongoing-button").className += " shadow-06px active";
+                document.querySelector(".upcoming-button").className = "upcoming-button";
+                document.querySelector(".projects-box.ongoing").className = "projects-box ongoing shadow-06px bg-white";
+                document.querySelector(".projects-box.upcoming").className += " hide";
+            }
+        }
+
+        function clickUpcoming(){
+            if (!document.querySelector(".upcoming-button").className.includes(" active")){
+                document.querySelector(".upcoming-button").className += " shadow-06px active";
+                document.querySelector(".ongoing-button").className = "ongoing-button";
+                document.querySelector(".projects-box.upcoming").className = "projects-box upcoming shadow-06px bg-white";
+                document.querySelector(".projects-box.ongoing").className += " hide";
+            }
+        }
+
+        var myCart = [];
+        var newArray = [];
+        
+
+        function addToCart(obj){
+            myCart.push(obj.id);
+            localStorage.callArray = myCart;
+            newArray = localStorage["callArray"];
+
+            console.log(myCart);
+            console.log(newArray);
+            document.querySelector(".alert-field").className = "alert-field";
+            blurOn();
+        }
+    </script>
+<!-- Project dashboard js -->
+
+<!-- Menu dashboard js -->
+<script>
+    function clickLv1(obj){ 
+        switch (true){
+            case !obj.className.includes("active") && !obj.className.includes("focus"):
+                obj.className += " active";
+                break;
+            case obj.className.includes("active") && !obj.className.includes("focus"):
+                obj.className = "menu-tap";
+                break;
+        }
+    } 
+</script>
+<!-- Menu dashboard js -->
+
+<!-- BLur background while popup -->
+<script>
+    var blurLayer = document.querySelector(".blur-layer");
+
+    function blurOn(){
+        blurLayer.className = "blur-layer";
+    }
+
+    function blurOff(){
+        blurLayer.className = "blur-layer hide";
+    }
+</script>
+<!-- BLur background while popup -->
+
+<!-- Alert popup -->
+<script>
+    function closeAlert(){
+        document.querySelector(".alert-field").className += " hide";
+        blurOff();
+    }
+</script>
+<!-- Alert popup -->
+
+    <!-- Mobile menu js -->
+    <script>
+        var menuPosition = document.querySelector(".dashboard-col-mobile");
+        var clickIndex = 0;
+
+            function hoverinMobileMenu(){
+                if (menuPosition.style.right == "-414px" || clickIndex == 0) {
+                    menuPosition.style = ("right: -386px;");
+                }
+            }
+
+            function hoveroutMobileMenu(){
+                if (menuPosition.style.right == "-386px") {
+                    menuPosition.style = ("right: -414px;");
+                }
+            }
+
+            function openMobileMenu(){
+                menuPosition.style = ("right: 0px;");
+                blurOn();
+                clickIndex ++;
+            }
+
+            function closeMobileMenu(){
+                menuPosition.style = ("right: -414px;");
+                blurOff();
+                clickIndex ++;
+            }
+    </script>
+    <!-- Mobile menu js -->
+
+<!-- Search box js-->
+    <script>
+        var clickTime = 0;
+
+        function clickOut(){
+            if (clickTime >= 1){
+                document.querySelector(".search-bar").className = "search-bar";
+                clickTime = 0;
+                console.log(clickTime);
+            }
+            var isClickInsideElement = document.querySelector('.dashboard-col-mobile').contains(event.target);
+            if (!isClickInsideElement) {
+                document.querySelector(".dashboard-col-mobile").style = ("right: -414px;");
+                blurOff();
+            }
+        }
+
+        function clickSearchBar(){
+            document.querySelector(".search-bar").className += " active";
+            clickTime ++;
+            console.log(clickTime)
+        }
+    </script>
+<!-- Search box JS-->
+
+<!-- Wow install -->
+    <script src="js/wow.js"></script>
+    <script>
+        new WOW().init();
+        
+        wow = new WOW(
+            {
+            boxClass:     'wow',      // default
+            animateClass: 'animated', // default
+            offset:       0,          // default
+            mobile:       true,       // default
+            live:         true        // default
+        }
+        )
+        wow.init();
+    </script>
+<!-- Wow install -->
+<!-- Bootstrap install -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+<!-- Bootstrap install -->
+</body>
+</html>
