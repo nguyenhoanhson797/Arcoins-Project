@@ -810,6 +810,11 @@ input::-webkit-inner-spin-button {
         padding-left: 10px;
         padding-right: 10px;
     }
+
+    .under-construction img{
+        width: 200px !important;
+        margin-top: 120px !important;
+    }
 }
 
 /* Screen layout */
