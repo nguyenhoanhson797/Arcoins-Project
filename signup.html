@@ -47,16 +47,23 @@
 
     <div class="main-field b-e-16px">
         <div class="login-field">
-            <form class="login-form" action="dashboard-main.html">
+
+            <!-- Login form -->
+            <form class="login-form" onsubmit="submitCheck()">
                 <p class="f-semi-bold h5 c-grayscale-80 d-flex justify-content-center">Sign in</p>
                 <div class="input-field">
 
+                    <!-- Account -->
                     <p class="t-subtitle-1 c-grayscale-60">Your Account Name</p>
-                    <input id="name-box" class="input-box c-grayscale-40" type="text" placeholder="Enter your account name">
+                    <input id="name-box" class="input-box c-grayscale-40" type="text" placeholder="Enter your account name" required>
+                    <!-- Account -->
 
+                    <!-- Email -->
                     <p class="t-subtitle-1 c-grayscale-60 mt-3">Your Email</p>
-                    <input id="email-box" class="input-box c-grayscale-40" type="email" placeholder="Enter your email address">
+                    <input id="email-box" class="input-box c-grayscale-40" type="email" placeholder="Enter your email address" required>
+                    <!-- Email -->
 
+                    <!-- Password -->
                     <div class="d-flex justify-content-between align-items-center mt-3">
                         <p class="t-subtitle-1 c-grayscale-60">Create a password</p>
                         <div class="first-off" onclick="showHide(this)">
@@ -66,8 +73,10 @@
                             <img src="img/icon/eye-open.svg">
                         </div>                
                     </div>
-                    <input id="password-box" class="input-box" type="password" placeholder="Password">
+                    <input id="password-box" class="input-box" type="password" placeholder="Password" required>
+                    <!-- Password -->
 
+                    <!-- Re password -->
                     <div class="d-flex justify-content-between align-items-center mt-3">
                         <p class="t-subtitle-1 c-grayscale-60">Confirm password</p>
                         <div class="re-off" onclick="showHide(this)">
@@ -77,15 +86,20 @@
                             <img src="img/icon/eye-open.svg">
                         </div>                
                     </div>
-                    <input id="re-password-box" class="input-box" type="password" placeholder="Password">
+                    <input id="re-password-box" class="input-box" type="password" placeholder="Password" required>
+                    <!-- Re password -->
                 </div>
 
+                <!-- submit button -->
                 <div class="submit-field">
                     <p class="t-caption c-grayscale-80 mb-3">By continuing, you agree to the Terms of use and Privacy Policy. </p>
                     <input type="submit" class="login-button button-secondary f-medium h5" value="Create an account">
                     <a href="index.html" class="t-body-1 f-medium c-grayscale-60">Already have an account?</a>
                 </div>
+                <!-- submit button -->
             </form>
+            <!-- Login form -->
+
 
             <div class="other-signup mt-5">
                 <div class="d-flex align-items-center justify-content-between">
@@ -154,10 +168,23 @@
             document.querySelector("#re-password-box").type = "password";
         }
     }
+
+    var password = document.querySelector("#password-box");
+    var rePassword = document.querySelector("#re-password-box");
+
+    function submitCheck(e){
+        if(password.value == rePassword.value){
+            alert("Sign up successful");
+            document.querySelector(".login-form").action = "dashboard-main.html";
+        } else{
+            document.querySelector(".login-form").action = "";
+            alert("The second password is not correct :)");
+        }
+    }
 </script>
 <!-- TODOMain js -->
 
-
+e
 <!-- Search box -->
 <div class="search-box hide">
     <input type="text" class="search-bar" placeholder="Search here" onclick="clickSearchBar()">

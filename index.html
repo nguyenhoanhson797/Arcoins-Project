@@ -46,19 +46,26 @@
         </div>
 
     <div class="main-field b-e-16px">
+        <!-- QR code -->
         <div class="qr-code-field">
             <img src="img/qr-code.svg">
             <p class="f-semi-bold h6 c-grayscale-80 mt-4">Log in with QR code</p>
             <p class="t-subtitle-1 c-grayscale-50 mt-1">Scan this with our App to log in instantly</p>
         </div>
+        <!-- QR code -->
 
+        <!-- Login form -->
         <div class="login-field">
-            <form class="login-form" action="dashboard-main.html">
+            <form class="login-form" action="dashboard-main.html" onsubmit="submitCheck()">
                 <p class="f-semi-bold h5 c-grayscale-80 d-flex justify-content-center">Sign in</p>
                 <div class="input-field">
-                    <p class="t-subtitle-1 c-grayscale-60">Email or mobile phone number</p>
-                    <input id="email-box" class="input-box c-grayscale-40" type="email" placeholder="Enter your email address">
 
+                    <!-- Account -->
+                    <p class="t-subtitle-1 c-grayscale-60">Email or mobile phone number</p>
+                    <input id="email-box" class="input-box" type="email" name="account" placeholder="Enter your email address" required>
+                    <!-- Account -->
+
+                    <!-- Password -->
                     <div class="d-flex justify-content-between align-items-center mt-3">
                         <p class="t-subtitle-1 c-grayscale-60">Your password</p>
                         <div class="off" onclick="showHide(this)">
@@ -68,13 +75,16 @@
                             <img src="img/icon/eye-open.svg">
                         </div>                
                     </div>
-                    <input id="password-box" class="input-box" type="password" placeholder="Enter your password">
+                    <input id="password-box" class="input-box" type="password" placeholder="Enter your password" required>
+                    <!-- Password -->
                 </div>
 
+                <!-- Submit button -->
                 <div class="submit-field">
-                    <input type="submit" class="login-button button-secondary f-medium h5" value="Log in">
+                    <input type="submit" class="login-button button-secondary f-medium h5" value="Log in" >
                     <p class="t-caption c-grayscale-80 mt-3 mb-2">By continuing, you agree to the Terms of use and Privacy Policy. </p>
                 </div>
+                <!-- Submit button -->
             </form>
 
             <div class="create-account mt-5">
@@ -88,6 +98,7 @@
                 </a>
             </div>
         </div>
+        <!-- Login form -->
     </div>
 
 </section>
@@ -105,6 +116,26 @@
             obj.className += " hide";
             document.querySelector(".off").className = document.querySelector(".off").className.replace(" hide","");
             document.querySelector("#password-box").type = "password";
+        }
+    }
+
+    var accountValue = document.querySelector("#email-box");
+    var passwordValue = document.querySelector("#password-box");
+    var userAccount = "son@gmail.com";
+    var userPassword = "123";
+
+    function submitCheck(e){
+        console.log(accountValue, passwordValue);
+        console.log(window.location);
+        if(accountValue.value == userAccount && passwordValue.value == userPassword){
+            alert("Login successful");
+        } else{
+            if(accountValue.value == "" || passwordValue.value == ""){
+                document.querySelector(".login-form").action = "";
+            } else{
+                document.querySelector(".login-form").action = "";
+                alert("Account: son@gmail.com, Password: 123 :)");
+            }
         }
     }
 </script>

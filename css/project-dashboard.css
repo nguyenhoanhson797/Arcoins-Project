@@ -154,3 +154,26 @@ td{
     width: 320px;
     height: 52px;
 }
+
+@media (max-width: 576px){
+    .ongoing-button svg{
+        display: none;
+    }
+
+    .upcoming-button svg{
+        display: none;
+    }
+
+    .ongoing-button{
+        width: 92px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .upcoming-button{
+        width: 92px;
+        padding-left: 6px;
+        padding-right: 6px;
+        left: 102px;
+    }
+}
