@@ -473,7 +473,7 @@
                                     <canvas id="lineChart"></canvas>
                                 </div>
 
-                                <div class="statistic-data container-fluid">
+                                <div class="statistic-data container-fluid dragscroll">
                                     <div class="row gx-2 gy-4">
                                         <div class="col-xxl-4 col-xl-6 col-lg-6 col-md-4 col-sm-6">
                                             <div class="s-d-contain">
@@ -724,6 +724,217 @@
                         <div class="bottom-space"></div>
                     </div>
                     <!-- Product bar -->
+
+                    <!-- TODO Product bar mobile -->
+                    <div class="product-bar-mobile fixed-bottom shadow-06px">
+                        <div class="expand-button" onclick="expandBlock(this)">
+                            <img src="img/icon/arrow-up/White.svg"> 
+                            <p class="c-grayscale-0">Expand</p>
+                            <img src="img/icon/arrow-up//White.svg">
+                        </div>
+
+                        
+                        <div class="blur-background"></div>
+        
+                        <div class="product-field row gy-3 dragscroll">
+                            <div class="col-lg-6 col-sm-12">
+                                <div id="product-bar-ORC" class="product-bar up shadow-04px active" onclick="clickProductBar(this)">
+                                        <p class="code f-semi-bold h6 c-secondary"> ORC </p>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="name col-12 f-semi-bold t-caption c-primary-50"> Opal Riverside </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Open/Current: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 12/14,58 $ </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Units: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 22 ORCs </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Profit/Loss: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 121,5 % </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <svg width="104" height="22" viewBox="0 0 104 22" fill="none">
+                                            <path d="M0.714355 13.7439L12.0794 21L23.4445 3.61314L34.8096 16.5166L46.1747 18.2155L57.5398 16.091L68.9048 1L80.2699 8.46099L91.635 13.2246L103 12.9129"/>
+                                        </svg>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div id="product-bar-NTR" class="product-bar up shadow-04px" onclick="clickProductBar(this)">
+                                        <p class="code f-semi-bold h6 c-secondary"> NTR </p>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="name col-12 f-semi-bold t-caption c-primary-50"> Luden Sea Nha Trang  </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Open/Current: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 10/11,63 $ </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Units: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 13 LSNs </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Profit/Loss: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 116,2 % </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <svg width="104" height="22" viewBox="0 0 104 22" fill="none">
+                                            <path d="M0.714355 14.5437L15.3266 17.8226L29.9388 1L44.5511 9.53295L59.1633 18.1415L73.7756 21L88.3878 14.8777L103 12.1352"/>
+                                        </svg>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div id="product-bar-ECH" class="product-bar down shadow-04px" onclick="clickProductBar(this)">
+                                        <p class="code f-semi-bold h6 c-secondary"> ECH </p>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="name col-12 f-semi-bold t-caption c-primary-50"> Empire City Ha Noi </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Open/Current: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 9,5/10,51 $ </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Units: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 16 ECHs </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Profit/Loss: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 118,6 % </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <svg width="104" height="22" viewBox="0 0 104 22" fill="none">
+                                            <path d="M0.714355 10.9464L15.3266 1L29.9388 1.30978L44.5511 10.1369L59.1633 12.0274L73.7756 5.96553L88.3878 21L103 10.9465"/>
+                                        </svg>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="product-bar deActive shadow-04px">
+                                        <p class="code f-semi-bold h6 c-secondary"> ORC </p>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="name col-12 f-semi-bold t-caption c-primary-50"> Opal Riverside </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Open/Current: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 12/14,58 $ </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Units: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 22 ORCs </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Profit/Loss: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 121,5 % </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <svg width="104" height="22" viewBox="0 0 104 22" fill="none">
+                                            <path d="M0.714355 13.7439L12.0794 21L23.4445 3.61314L34.8096 16.5166L46.1747 18.2155L57.5398 16.091L68.9048 1L80.2699 8.46099L91.635 13.2246L103 12.9129"/>
+                                        </svg>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="product-bar deActive shadow-04px">
+                                        <p class="code f-semi-bold h6 c-secondary"> ORC </p>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="name col-12 f-semi-bold t-caption c-primary-50"> Opal Riverside </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Open/Current: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 12/14,58 $ </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Units: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 22 ORCs </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Profit/Loss: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 121,5 % </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <svg width="104" height="22" viewBox="0 0 104 22" fill="none">
+                                            <path d="M0.714355 13.7439L12.0794 21L23.4445 3.61314L34.8096 16.5166L46.1747 18.2155L57.5398 16.091L68.9048 1L80.2699 8.46099L91.635 13.2246L103 12.9129"/>
+                                        </svg>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="product-bar deActive shadow-04px">
+                                        <p class="code f-semi-bold h6 c-secondary"> ORC </p>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="name col-12 f-semi-bold t-caption c-primary-50"> Opal Riverside </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Open/Current: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 12/14,58 $ </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Units: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 22 ORCs </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Profit/Loss: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 121,5 % </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <svg width="104" height="22" viewBox="0 0 104 22" fill="none">
+                                            <path d="M0.714355 13.7439L12.0794 21L23.4445 3.61314L34.8096 16.5166L46.1747 18.2155L57.5398 16.091L68.9048 1L80.2699 8.46099L91.635 13.2246L103 12.9129"/>
+                                        </svg>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="product-bar deActive shadow-04px">
+                                        <p class="code f-semi-bold h6 c-secondary"> ORC </p>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="name col-12 f-semi-bold t-caption c-primary-50"> Opal Riverside </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Open/Current: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 12/14,58 $ </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Units: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 22 ORCs </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="f-medium t-overline c-grayscale-80"> Profit/Loss: </p>
+                                                    <p class="f-semi-bold t-overline c-grayscale-80"> 121,5 % </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <svg width="104" height="22" viewBox="0 0 104 22" fill="none">
+                                            <path d="M0.714355 13.7439L12.0794 21L23.4445 3.61314L34.8096 16.5166L46.1747 18.2155L57.5398 16.091L68.9048 1L80.2699 8.46099L91.635 13.2246L103 12.9129"/>
+                                        </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- TODO Product bar mobile -->
                 </div>
 
                 <!-- Main contain -->
@@ -836,6 +1047,19 @@
         }
 
     }
+    function expandBlock(obj){
+        if(document.querySelector(".product-bar-mobile").className.includes("expand")){
+                obj.childNodes[3].innerText = "Expand";
+                document.querySelector(".product-bar-mobile").className = document.querySelector(".product-bar-mobile").className.replace(" expand","");
+                document.querySelector(".contain .container-fluid.gap-3").style = "padding-bottom: 140px !important;";
+        } else {
+                obj.childNodes[3].innerText = "Collapse";
+                document.querySelector(".product-bar-mobile").className += " expand";
+                document.querySelector(".contain .container-fluid.gap-3").style = "padding-bottom: 360px !important;";
+        }
+    };
+        
+
 </script>
 <!-- Menu dashboard js -->
 
@@ -894,11 +1118,20 @@
                 clickTime = 0;
                 console.log(clickTime);
             }
-            var isClickInsideElement = document.querySelector('.dashboard-col-mobile').contains(event.target);
-            if (!isClickInsideElement) {
+            var isClickInsideMenuDashboard = document.querySelector('.dashboard-col-mobile').contains(event.target);
+            
+            if (!isClickInsideMenuDashboard) {
                 document.querySelector(".dashboard-col-mobile").style = ("right: -414px;");
                 blurOff();
             }
+
+            var isClickInsideProductBar = document.querySelector('.product-bar-mobile').contains(event.target);
+            if(document.querySelector(".product-bar-mobile").className.includes("expand") && (!isClickInsideProductBar)){
+                document.querySelector(".product-bar-mobile .expand-button p").innerText = "Expand";
+                document.querySelector(".product-bar-mobile").className = document.querySelector(".product-bar-mobile").className.replace(" expand","");
+                document.querySelector(".contain .container-fluid.gap-3").style = "padding-bottom: 140px !important;";
+            }
+
         }
 
         function clickSearchBar(){
@@ -956,6 +1189,10 @@
     </script>
 
 <!-- Chart js -->
+
+<!-- Drag scroll -->
+<script src="js/dragscroll.js"></script>
+<!-- Drag scroll -->
 
 
 

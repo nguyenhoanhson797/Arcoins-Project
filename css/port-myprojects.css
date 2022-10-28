@@ -1,3 +1,7 @@
+.main-contain .contain .container-fluid{
+    position: relative;
+}
+
 .row{
     margin-top: 0px;
 }
@@ -278,4 +282,96 @@
     max-height: 180px;
     height: 180px;
     min-width: 180px;
+}
+
+.product-bar-mobile{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px 10px;
+    bottom: -10px;
+    transition: 0.3s ease;
+}
+
+.product-bar-mobile .blur-background{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(193, 221, 255, 0.4);
+    filter: blur(2px);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    margin: 20px 0px 0px 0px;
+    z-index: -1;
+}
+
+.product-bar-mobile .expand-button{
+    display: flex;
+    width: max-content;
+    gap: 6px;
+    padding: 4px 12px;
+    position: absolute;
+    top: -20px;
+}
+
+.product-bar-mobile .expand-button::after{
+    content: "";
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(193, 221, 255, 0.4);
+    filter: blur(2px);
+    backdrop-filter: blur(5px);
+    border-radius: 12px 12px 0px 0px;
+    z-index: -10;
+}
+
+.product-bar-mobile img{
+    transition: 0.3s ease;
+}
+
+@media (max-width: 576px){
+    .product-bar-mobile{
+        display: flex;
+    }
+
+    .contain .container-fluid.gap-3{
+        padding-bottom: 140px !important;   
+    }
+
+    .product-field{
+        padding: 0px 12px;
+    }
+
+    .container-fluid .product-field{
+        display: none;
+    }
+
+    .product-bar-mobile .product-field{
+        height: 92px;
+        overflow: scroll;
+        display: block;
+        width: 100%;
+        padding: 0px;
+        margin-top: 12px;
+        margin-bottom: 20px;
+        transition: 0.3s ease;
+    }
+
+    .product-bar-mobile.expand .product-field{
+        height: 46vh;
+    }
+
+    .product-bar-mobile.expand img{
+        transform: rotate(180deg);
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 993px){
+    .container-fluid .product-field{
+        padding: 40px 8px;
+    }
 }
